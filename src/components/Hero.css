@@ -3,7 +3,8 @@
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
-	background: #0a0a0a;
+	/* background: #0a0a0a; */
+	background: #000;
 	padding-top: 80px;
 	position: relative;
 	overflow: hidden;
@@ -17,16 +18,18 @@
 	height: 100%;
 	overflow: hidden;
 	opacity: 0;
-	animation: heroStarsAppear 1.5s ease-in-out 3s forwards;
+	animation: heroStarsAppear 2s ease-in-out 0.5s forwards;
+	z-index: 0;
 }
 
 .hero-star {
 	position: absolute;
-	width: 3px;
-	height: 3px;
+	width: 2px;
+	height: 2px;
 	background: white;
 	border-radius: 50%;
-	animation: moveHeroStar 6s linear infinite;
+	opacity: 0;
+	animation: moveHeroStar 20s linear infinite;
 }
 
 .hero-rings {
@@ -36,6 +39,20 @@
 	transform: translate(-50%, -50%);
 	opacity: 0;
 	animation: heroRingsAppear 1.5s ease-in-out 0s forwards;
+	z-index: 1;
+
+	/* black background that makes stars disappear */
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(-50%, -50%);
+		border-radius: 100%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle 200px at center, #05040a 90%, transparent 100%);
+	}
 }
 
 .hero-rings .hero-ring-1,
@@ -45,6 +62,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	filter: blur(10px);
+	opacity: 0.5;
 }
 
 .hero-ring-1 {
@@ -160,13 +178,12 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.8;
+		opacity: 0.6;
 	}
 }
 
 @keyframes moveHeroStar {
 	0% {
-		transform: translateX(0) translateY(0);
 		opacity: 0;
 	}
 	10% {
@@ -176,8 +193,9 @@
 		opacity: 0.8;
 	}
 	100% {
-		transform: translateX(-40vw) translateY(-40vh);
 		opacity: 0;
+		top: 50%;
+		left: 50%;
 	}
 }
 
@@ -186,7 +204,7 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.5;
+		opacity: 1;
 	}
 }
 

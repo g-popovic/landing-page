@@ -15,50 +15,77 @@ export default function Hero() {
 	const subtitle =
 		"Profesionalna web development agencija iz Crne Gore specijalizovana za moderne web aplikacije, e-commerce platforme i digitalne transformacije.";
 
-	useEffect(() => {
-		// Create animated stars
-		const createHeroStars = () => {
-			const heroStarsContainer = heroStarsRef.current;
-			if (!heroStarsContainer) return;
+	function createHeroStars() {
+		const heroStarsContainer = heroStarsRef.current;
+		if (!heroStarsContainer) return;
 
-			const starCount = 40;
+		const starCount = 150;
 
-			for (let i = 0; i < starCount; i++) {
-				const star = document.createElement("div");
-				star.className = "hero-star";
+		// Render initial stars that will be everywhere on-screen and disappear when they reach the center
+		for (let i = 0; i < starCount * 0.5; i++) {
+			const star = document.createElement("div");
+			star.className = "hero-star";
 
-				// Random starting position around the edges
-				const side = Math.floor(Math.random() * 4);
-				let x, y;
+			const x = Math.random() * 100;
+			const y = Math.random() * 100;
+			const deltaX = 50 - x;
+			const deltaY = 50 - y;
 
-				switch (side) {
-					case 0: // top
-						x = Math.random() * 100;
-						y = -5;
-						break;
-					case 1: // right
-						x = 105;
-						y = Math.random() * 100;
-						break;
-					case 2: // bottom
-						x = Math.random() * 100;
-						y = 105;
-						break;
-					case 3: // left
-						x = -5;
-						y = Math.random() * 100;
-						break;
-				}
+			const distanceFromCenter = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+			const animationDuration = distanceFromCenter * 1;
 
-				star.style.left = x + "%";
-				star.style.top = y + "%";
-				star.style.animationDelay = Math.random() * 3 + "s";
-				star.style.opacity = (Math.random() * 0.6 + 0.3).toString();
+			// Set initial position
+			star.style.left = x + "%";
+			star.style.top = y + "%";
+			star.style.animationDuration = `${animationDuration}s`;
+			star.style.animationIterationCount = "1";
 
-				heroStarsContainer.appendChild(star);
+			heroStarsContainer.appendChild(star);
+		}
+
+		// Render stars that start from beyond the screen and cycle continuously
+		for (let i = 0; i < starCount; i++) {
+			const star = document.createElement("div");
+			star.className = "hero-star";
+
+			// Random starting position around the edges
+			const side = Math.floor(Math.random() * 4);
+			let x = 0,
+				y = 0;
+
+			switch (side) {
+				case 0: // top
+					x = Math.random() * 100;
+					y = -5;
+					break;
+				case 1: // right
+					x = 105;
+					y = Math.random() * 100;
+					break;
+				case 2: // bottom
+					x = Math.random() * 100;
+					y = 105;
+					break;
+				case 3: // left
+					x = -5;
+					y = Math.random() * 100;
+					break;
 			}
-		};
 
+			const animationDuration = 60;
+
+			// Set initial position
+			star.style.left = x + "%";
+			star.style.top = y + "%";
+			star.style.animationDelay = Math.random() * animationDuration + "s";
+			star.style.animationDuration = `${animationDuration}s`;
+			star.style.opacity = (Math.random() * 0.6 + 0.3).toString();
+
+			heroStarsContainer.appendChild(star);
+		}
+	}
+
+	useEffect(() => {
 		// Setup word-by-word loading
 		const setupWordLoading = (element: HTMLElement, text: string) => {
 			// Create invisible placeholder to reserve exact space
@@ -135,6 +162,9 @@ export default function Hero() {
 
 	return (
 		<section id='home' className='hero'>
+			{/* Hero Stars Background */}
+			<div className='hero-stars' ref={heroStarsRef}></div>
+
 			{/* Hero Background Rings */}
 			<div className='hero-rings'>
 				<Image
@@ -152,9 +182,6 @@ export default function Hero() {
 					height={400}
 				/>
 			</div>
-
-			{/* Hero Stars Background */}
-			<div className='hero-stars' ref={heroStarsRef}></div>
 
 			<div className='hero-container' ref={heroContainerRef}>
 				<div className='hero-content'>
