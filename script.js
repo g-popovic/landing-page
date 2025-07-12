@@ -1,26 +1,4 @@
-// Loading Screen Animation
-window.addEventListener("load", () => {
-	const loadingScreen = document.querySelector(".loading-screen");
-	const body = document.body;
-
-	// Loading stars removed - they now only appear in hero section
-
-	// Create hero stars (hidden initially)
-	createHeroStars();
-
-	// Hide loading screen after a minimum time
-	setTimeout(() => {
-		loadingScreen.classList.add("fade-out");
-		body.classList.add("loaded");
-
-		// Remove loading screen from DOM after animation
-		setTimeout(() => {
-			loadingScreen.remove();
-		}, 1500);
-	}, 2500); // Show for 2.5 seconds for faster transition
-});
-
-// Loading stars function removed - stars now only appear in hero section
+const MAIN_CONTENT_LOAD_DELAY = 1500;
 
 // Create animated stars for hero section
 function createHeroStars() {
@@ -230,61 +208,6 @@ const observer = new IntersectionObserver(entries => {
 	});
 }, observerOptions);
 
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", () => {
-	const elementsToAnimate = document.querySelectorAll(
-		".service-card, .portfolio-item, .process-step, .floating-card"
-	);
-	elementsToAnimate.forEach(el => {
-		observer.observe(el);
-	});
-});
-
-// Add animation styles
-const animationStyles = document.createElement("style");
-animationStyles.textContent = `
-    .service-card, .portfolio-item, .process-step {
-        opacity: 0;
-        transform: translateY(60px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .service-card.animate-in, .portfolio-item.animate-in, .process-step.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .floating-card {
-        opacity: 0;
-        transform: scale(0.8) translateY(40px);
-        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .floating-card.animate-in {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-    
-    /* Stagger animation delays */
-    .service-card:nth-child(1) { transition-delay: 0.1s; }
-    .service-card:nth-child(2) { transition-delay: 0.2s; }
-    .service-card:nth-child(3) { transition-delay: 0.3s; }
-    .service-card:nth-child(4) { transition-delay: 0.4s; }
-    .service-card:nth-child(5) { transition-delay: 0.5s; }
-    .service-card:nth-child(6) { transition-delay: 0.6s; }
-    
-    .portfolio-item:nth-child(1) { transition-delay: 0.1s; }
-    .portfolio-item:nth-child(2) { transition-delay: 0.2s; }
-    .portfolio-item:nth-child(3) { transition-delay: 0.3s; }
-    
-    .process-step:nth-child(1) { transition-delay: 0.1s; }
-    .process-step:nth-child(2) { transition-delay: 0.2s; }
-    .process-step:nth-child(3) { transition-delay: 0.3s; }
-    .process-step:nth-child(4) { transition-delay: 0.4s; }
-`;
-
-document.head.appendChild(animationStyles);
-
 // Add active navigation highlighting
 window.addEventListener("scroll", () => {
 	const sections = document.querySelectorAll("section[id]");
@@ -370,7 +293,7 @@ function setupWordLoading(element, text) {
 }
 
 // Word-by-word loading effect for hero title
-function wordByWordLoader(element, text, wordDelay = 200) {
+function wordByWordLoader(element, text, wordDelay = 100) {
 	const words = text.split(" ");
 	const overlay = element.wordOverlay;
 	overlay.innerHTML = "";
@@ -389,8 +312,7 @@ function wordByWordLoader(element, text, wordDelay = 200) {
 	});
 }
 
-// Initialize text preparation and word-by-word loading
-document.addEventListener("DOMContentLoaded", () => {
+function startWordByWordLoader() {
 	// Store original text and create layout-preserving setup
 	const heroTitle = document.querySelector(".hero-title");
 	const heroSubtitle = document.querySelector(".hero-subtitle");
@@ -405,20 +327,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		setupWordLoading(heroSubtitle, originalSubtitleText);
 	}
 
-	// Start word loading after hero content fades in
-	setTimeout(() => {
-		if (heroTitle) {
-			wordByWordLoader(heroTitle, originalTitleText, 150); // 150ms delay between words
-		}
+	if (heroTitle) {
+		wordByWordLoader(heroTitle, originalTitleText); // 150ms delay between words
+	}
 
-		// Start subtitle loading after title has started
-		setTimeout(() => {
-			if (heroSubtitle) {
-				wordByWordLoader(heroSubtitle, originalSubtitleText, 120); // Slightly faster for subtitle
-			}
-		}, 800); // Start subtitle 800ms after title
-	}, 4000); // Start after hero content begins to fade in
-});
+	// Start subtitle loading after title has started
+	setTimeout(() => {
+		if (heroSubtitle) {
+			wordByWordLoader(heroSubtitle, originalSubtitleText, 50); // Slightly faster for subtitle
+		}
+	}, 1000); // Start subtitle 800ms after title
+}
 
 // Add modern mouse cursor effect
 document.addEventListener("mousemove", e => {
@@ -500,9 +419,35 @@ function addPageTransitions() {
 	document.head.appendChild(style);
 }
 
-// Initialize modern effects
 document.addEventListener("DOMContentLoaded", () => {
+	// Observe elements for animation
+	const elementsToAnimate = document.querySelectorAll(
+		".service-card, .portfolio-item, .process-step, .floating-card"
+	);
+	elementsToAnimate.forEach(el => {
+		observer.observe(el);
+	});
+
+	// Trigger word-by-word loader
+	startWordByWordLoader();
+
+	// Add page transition
 	addPageTransitions();
 });
 
-console.log("Quark Digital landing page loaded successfully! 🚀✨");
+// Loading Screen Animation
+window.addEventListener("load", () => {
+	const loadingScreen = document.querySelector(".loading-screen");
+	const body = document.body;
+	const heroContainer = document.querySelector(".hero-container");
+	heroContainer.style.display = "none";
+
+	// Loading stars removed - they now only appear in hero section
+
+	// Create hero stars (hidden initially)
+	createHeroStars();
+
+	setTimeout(() => {
+		heroContainer.style.display = "flex";
+	}, 1500);
+});
