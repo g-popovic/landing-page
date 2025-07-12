@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
 		// Remove loading screen from DOM after animation
 		setTimeout(() => {
 			loadingScreen.remove();
-		}, 800);
-	}, 2000); // Show for at least 2 seconds
+		}, 1000);
+	}, 2500); // Show for at least 2.5 seconds
 });
 
 // Mobile Navigation Toggle
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				typeWriter(heroTitle, originalText, 25);
 			}, 500);
 		}
-	}, 2500); // Start after loading screen
+	}, 3000); // Start after loading screen
 });
 
 // Add modern mouse cursor effect
