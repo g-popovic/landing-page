@@ -3,6 +3,12 @@ window.addEventListener("load", () => {
 	const loadingScreen = document.querySelector(".loading-screen");
 	const body = document.body;
 
+	// Create loading stars
+	createLoadingStars();
+
+	// Create hero stars (hidden initially)
+	createHeroStars();
+
 	// Hide loading screen after a minimum time
 	setTimeout(() => {
 		loadingScreen.classList.add("fade-out");
@@ -11,9 +17,91 @@ window.addEventListener("load", () => {
 		// Remove loading screen from DOM after animation
 		setTimeout(() => {
 			loadingScreen.remove();
-		}, 1000);
-	}, 2500); // Show for at least 2.5 seconds
+		}, 1500);
+	}, 2500); // Show for 2.5 seconds for faster transition
 });
+
+// Create animated stars for loading screen
+function createLoadingStars() {
+	const starsContainer = document.getElementById("loadingStars");
+	const starCount = 50;
+
+	for (let i = 0; i < starCount; i++) {
+		const star = document.createElement("div");
+		star.className = "star";
+
+		// Random starting position around the edges
+		const side = Math.floor(Math.random() * 4);
+		let x, y;
+
+		switch (side) {
+			case 0: // top
+				x = Math.random() * 100;
+				y = 0;
+				break;
+			case 1: // right
+				x = 100;
+				y = Math.random() * 100;
+				break;
+			case 2: // bottom
+				x = Math.random() * 100;
+				y = 100;
+				break;
+			case 3: // left
+				x = 0;
+				y = Math.random() * 100;
+				break;
+		}
+
+		star.style.left = x + "%";
+		star.style.top = y + "%";
+		star.style.animationDelay = Math.random() * 2 + "s";
+		star.style.opacity = Math.random() * 0.8 + 0.2;
+
+		starsContainer.appendChild(star);
+	}
+}
+
+// Create animated stars for hero section
+function createHeroStars() {
+	const heroStarsContainer = document.getElementById("heroStars");
+	const starCount = 40;
+
+	for (let i = 0; i < starCount; i++) {
+		const star = document.createElement("div");
+		star.className = "hero-star";
+
+		// Random starting position around the edges
+		const side = Math.floor(Math.random() * 4);
+		let x, y;
+
+		switch (side) {
+			case 0: // top
+				x = Math.random() * 100;
+				y = -5;
+				break;
+			case 1: // right
+				x = 105;
+				y = Math.random() * 100;
+				break;
+			case 2: // bottom
+				x = Math.random() * 100;
+				y = 105;
+				break;
+			case 3: // left
+				x = -5;
+				y = Math.random() * 100;
+				break;
+		}
+
+		star.style.left = x + "%";
+		star.style.top = y + "%";
+		star.style.animationDelay = Math.random() * 3 + "s";
+		star.style.opacity = Math.random() * 0.6 + 0.3;
+
+		heroStarsContainer.appendChild(star);
+	}
+}
 
 // Mobile Navigation Toggle
 const navToggle = document.querySelector(".nav-toggle");
@@ -315,18 +403,17 @@ function typeWriter(element, text, speed = 50) {
 
 // Initialize typing effect when page loads
 document.addEventListener("DOMContentLoaded", () => {
-	// Delay the typing effect until after loading screen
+	// Delay the typing effect until after loading screen and hero content appears
 	setTimeout(() => {
 		const heroTitle = document.querySelector(".hero-title");
 		if (heroTitle) {
 			const originalText = heroTitle.textContent;
-			heroTitle.style.opacity = "0";
+			// Don't set opacity here as it's handled by the hero animation
 			setTimeout(() => {
-				heroTitle.style.opacity = "1";
-				typeWriter(heroTitle, originalText, 25);
-			}, 500);
+				typeWriter(heroTitle, originalText, 30);
+			}, 800);
 		}
-	}, 3000); // Start after loading screen
+	}, 5000); // Start after hero content fades in
 });
 
 // Add modern mouse cursor effect

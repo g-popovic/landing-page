@@ -11,11 +11,16 @@ body {
 	color: #ffffff;
 	background: #0a0a0a;
 	overflow-x: hidden;
+	opacity: 1;
+}
+
+/* Hide main content initially, show after loading */
+.main-content {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
 }
 
-body.loaded {
+body.loaded .main-content {
 	opacity: 1;
 }
 
@@ -30,12 +35,13 @@ html {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
+	background: #0a0a0a;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 9999;
-	transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+	transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+	overflow: hidden;
 }
 
 .loading-screen.fade-out {
@@ -43,45 +49,130 @@ html {
 	visibility: hidden;
 }
 
+/* Animated Background Rings */
+.loading-rings {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 600px;
+	opacity: 1;
+	animation: loadingRingsIn 0.6s ease-out forwards;
+}
+
+.ring {
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ring-1 {
+	width: 400px;
+	height: 400px;
+	border-radius: 50%;
+	filter: blur(25px);
+	animation: rotateClockwise 8s linear infinite;
+	opacity: 0.6;
+}
+
+.ring-1::before {
+	content: "";
+	position: absolute;
+	top: -40px;
+	left: -40px;
+	right: -40px;
+	bottom: -40px;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 0deg,
+		#a855f7 0deg,
+		#a855f7 90deg,
+		transparent 90deg,
+		transparent 180deg,
+		#a855f7 180deg,
+		#a855f7 270deg,
+		transparent 270deg
+	);
+	mask: radial-gradient(circle, transparent 160px, black 180px);
+	-webkit-mask: radial-gradient(circle, transparent 160px, black 180px);
+}
+
+.ring-2 {
+	width: 320px;
+	height: 320px;
+	border-radius: 50%;
+	filter: blur(20px);
+	animation: rotateCounterClockwise 6s linear infinite;
+	opacity: 0.7;
+}
+
+.ring-2::before {
+	content: "";
+	position: absolute;
+	top: -35px;
+	left: -35px;
+	right: -35px;
+	bottom: -35px;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 180deg,
+		#3b82f6 0deg,
+		#3b82f6 90deg,
+		transparent 90deg,
+		transparent 180deg,
+		#3b82f6 180deg,
+		#3b82f6 270deg,
+		transparent 270deg
+	);
+	mask: radial-gradient(circle, transparent 125px, black 145px);
+	-webkit-mask: radial-gradient(circle, transparent 125px, black 145px);
+}
+
+/* Stars Background */
+.stars-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	opacity: 0;
+	animation: starsAppear 1.5s ease-in-out 0.2s forwards;
+}
+
+.star {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: white;
+	border-radius: 50%;
+	animation: moveStar 4s linear infinite;
+}
+
+/* Loading Content */
 .loading-content {
 	text-align: center;
 	color: white;
 	position: relative;
+	z-index: 10;
+	opacity: 0;
+	transform: translateY(30px);
+	filter: blur(8px);
+	animation: contentFadeIn 1.2s ease-out 0.8s forwards;
 }
 
 .loading-logo {
 	font-size: 2.5rem;
 	font-weight: 600;
-	margin-bottom: 3rem;
+	margin-bottom: 1rem;
 	background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	animation: glow 2s ease-in-out infinite alternate;
-}
-
-.loading-spinner {
-	width: 80px;
-	height: 80px;
-	border: 2px solid rgba(255, 255, 255, 0.1);
-	border-radius: 50%;
-	position: relative;
-	margin: 0 auto 2rem;
-	animation: rotate 2s linear infinite;
-}
-
-.loading-spinner::before {
-	content: "";
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	right: -2px;
-	bottom: -2px;
-	border-radius: 50%;
-	border: 2px solid transparent;
-	border-top: 2px solid #a855f7;
-	border-right: 2px solid #3b82f6;
-	animation: rotate 1s linear infinite;
 }
 
 .loading-text {
@@ -91,21 +182,121 @@ html {
 	letter-spacing: 0.5px;
 }
 
-@keyframes rotate {
+@keyframes rotateClockwise {
 	0% {
-		transform: rotate(0deg);
+		transform: translate(-50%, -50%) rotate(0deg);
 	}
 	100% {
-		transform: rotate(360deg);
+		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
 
-@keyframes glow {
+@keyframes rotateCounterClockwise {
 	0% {
-		filter: brightness(1);
+		transform: translate(-50%, -50%) rotate(0deg);
 	}
 	100% {
-		filter: brightness(1.2);
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+@keyframes starsAppear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes moveStar {
+	0% {
+		transform: translateX(0) translateY(0);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-50vw) translateY(-50vh);
+		opacity: 0;
+	}
+}
+
+@keyframes contentFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+		filter: blur(8px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0px);
+	}
+}
+
+@keyframes loadingRingsIn {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes heroStarsAppear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes moveHeroStar {
+	0% {
+		transform: translateX(0) translateY(0);
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.8;
+	}
+	90% {
+		opacity: 0.8;
+	}
+	100% {
+		transform: translateX(-40vw) translateY(-40vh);
+		opacity: 0;
+	}
+}
+
+@keyframes heroRingsAppear {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes heroContentFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
+		filter: blur(8px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0px);
 	}
 }
 
@@ -206,10 +397,113 @@ html {
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
-	background: radial-gradient(circle at 20% 50%, #1a1a1a 0%, #0a0a0a 100%);
+	background: #0a0a0a;
 	padding-top: 80px;
 	position: relative;
 	overflow: hidden;
+}
+
+/* Hero Stars Background */
+.hero-stars {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	opacity: 0;
+	animation: heroStarsAppear 1.5s ease-in-out 3s forwards;
+}
+
+.hero-star {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	background: white;
+	border-radius: 50%;
+	animation: moveHeroStar 6s linear infinite;
+}
+
+/* Hero Background Rings */
+.hero-rings {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 800px;
+	height: 800px;
+	opacity: 0;
+	animation: heroRingsAppear 1.5s ease-in-out 2.5s forwards;
+}
+
+.hero-ring-1 {
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: blur(30px);
+	animation: rotateClockwise 12s linear infinite;
+	opacity: 0.3;
+	border-radius: 50%;
+}
+
+.hero-ring-1::before {
+	content: "";
+	position: absolute;
+	top: -50px;
+	left: -50px;
+	right: -50px;
+	bottom: -50px;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 0deg,
+		#a855f7 0deg,
+		#a855f7 90deg,
+		transparent 90deg,
+		transparent 180deg,
+		#a855f7 180deg,
+		#a855f7 270deg,
+		transparent 270deg
+	);
+	mask: radial-gradient(circle, transparent 250px, black 275px);
+	-webkit-mask: radial-gradient(circle, transparent 250px, black 275px);
+}
+
+.hero-ring-2 {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: blur(25px);
+	animation: rotateCounterClockwise 8s linear infinite;
+	opacity: 0.4;
+	border-radius: 50%;
+}
+
+.hero-ring-2::before {
+	content: "";
+	position: absolute;
+	top: -40px;
+	left: -40px;
+	right: -40px;
+	bottom: -40px;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 180deg,
+		#3b82f6 0deg,
+		#3b82f6 90deg,
+		transparent 90deg,
+		transparent 180deg,
+		#3b82f6 180deg,
+		#3b82f6 270deg,
+		transparent 270deg
+	);
+	mask: radial-gradient(circle, transparent 160px, black 180px);
+	-webkit-mask: radial-gradient(circle, transparent 160px, black 180px);
 }
 
 .hero::before {
@@ -219,14 +513,18 @@ html {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-		radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+	background: radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+		radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
 	z-index: 1;
 }
 
 .hero-container {
 	position: relative;
-	z-index: 2;
+	z-index: 10;
+	opacity: 0;
+	transform: translateY(40px);
+	filter: blur(8px);
+	animation: heroContentFadeIn 1.5s ease-out 3.5s forwards;
 }
 
 .hero-container {
