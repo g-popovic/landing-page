@@ -3,8 +3,7 @@ window.addEventListener("load", () => {
 	const loadingScreen = document.querySelector(".loading-screen");
 	const body = document.body;
 
-	// Create loading stars
-	createLoadingStars();
+	// Loading stars removed - they now only appear in hero section
 
 	// Create hero stars (hidden initially)
 	createHeroStars();
@@ -21,46 +20,7 @@ window.addEventListener("load", () => {
 	}, 2500); // Show for 2.5 seconds for faster transition
 });
 
-// Create animated stars for loading screen
-function createLoadingStars() {
-	const starsContainer = document.getElementById("loadingStars");
-	const starCount = 50;
-
-	for (let i = 0; i < starCount; i++) {
-		const star = document.createElement("div");
-		star.className = "star";
-
-		// Random starting position around the edges
-		const side = Math.floor(Math.random() * 4);
-		let x, y;
-
-		switch (side) {
-			case 0: // top
-				x = Math.random() * 100;
-				y = 0;
-				break;
-			case 1: // right
-				x = 100;
-				y = Math.random() * 100;
-				break;
-			case 2: // bottom
-				x = Math.random() * 100;
-				y = 100;
-				break;
-			case 3: // left
-				x = 0;
-				y = Math.random() * 100;
-				break;
-		}
-
-		star.style.left = x + "%";
-		star.style.top = y + "%";
-		star.style.animationDelay = Math.random() * 2 + "s";
-		star.style.opacity = Math.random() * 0.8 + 0.2;
-
-		starsContainer.appendChild(star);
-	}
-}
+// Loading stars function removed - stars now only appear in hero section
 
 // Create animated stars for hero section
 function createHeroStars() {
@@ -385,35 +345,79 @@ document.querySelectorAll(".service-card").forEach(card => {
 	});
 });
 
-// Typing effect for hero title
-function typeWriter(element, text, speed = 50) {
+// Store original text content
+let originalTitleText = "";
+let originalSubtitleText = "";
+
+// Setup layout-preserving word loading structure
+function setupWordLoading(element, text) {
+	// Create invisible placeholder to reserve exact space
+	const placeholder = document.createElement("div");
+	placeholder.className = "text-placeholder";
+	placeholder.textContent = text;
+
+	// Create overlay for word-by-word loading
+	const overlay = document.createElement("div");
+	overlay.className = "word-overlay";
+
+	// Clear original content and add our structure
 	element.innerHTML = "";
-	let i = 0;
+	element.appendChild(placeholder);
+	element.appendChild(overlay);
 
-	function type() {
-		if (i < text.length) {
-			element.innerHTML += text.charAt(i);
-			i++;
-			setTimeout(type, speed);
-		}
-	}
-
-	type();
+	// Store reference to overlay for later use
+	element.wordOverlay = overlay;
 }
 
-// Initialize typing effect when page loads
-document.addEventListener("DOMContentLoaded", () => {
-	// Delay the typing effect until after loading screen and hero content appears
-	setTimeout(() => {
-		const heroTitle = document.querySelector(".hero-title");
-		if (heroTitle) {
-			const originalText = heroTitle.textContent;
-			// Don't set opacity here as it's handled by the hero animation
-			setTimeout(() => {
-				typeWriter(heroTitle, originalText, 30);
-			}, 800);
+// Word-by-word loading effect for hero title
+function wordByWordLoader(element, text, wordDelay = 200) {
+	const words = text.split(" ");
+	const overlay = element.wordOverlay;
+	overlay.innerHTML = "";
+
+	words.forEach((word, index) => {
+		const wordSpan = document.createElement("span");
+		wordSpan.className = "word";
+		wordSpan.textContent = word;
+		wordSpan.style.animationDelay = `${index * wordDelay}ms`;
+		overlay.appendChild(wordSpan);
+
+		// Add space after each word except the last one
+		if (index < words.length - 1) {
+			overlay.appendChild(document.createTextNode(" "));
 		}
-	}, 5000); // Start after hero content fades in
+	});
+}
+
+// Initialize text preparation and word-by-word loading
+document.addEventListener("DOMContentLoaded", () => {
+	// Store original text and create layout-preserving setup
+	const heroTitle = document.querySelector(".hero-title");
+	const heroSubtitle = document.querySelector(".hero-subtitle");
+
+	if (heroTitle) {
+		originalTitleText = heroTitle.textContent;
+		setupWordLoading(heroTitle, originalTitleText);
+	}
+
+	if (heroSubtitle) {
+		originalSubtitleText = heroSubtitle.textContent;
+		setupWordLoading(heroSubtitle, originalSubtitleText);
+	}
+
+	// Start word loading after hero content fades in
+	setTimeout(() => {
+		if (heroTitle) {
+			wordByWordLoader(heroTitle, originalTitleText, 150); // 150ms delay between words
+		}
+
+		// Start subtitle loading after title has started
+		setTimeout(() => {
+			if (heroSubtitle) {
+				wordByWordLoader(heroSubtitle, originalSubtitleText, 120); // Slightly faster for subtitle
+			}
+		}, 800); // Start subtitle 800ms after title
+	}, 4000); // Start after hero content begins to fade in
 });
 
 // Add modern mouse cursor effect
