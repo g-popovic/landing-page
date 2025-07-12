@@ -76,7 +76,7 @@ export default function Services() {
 
 		if (servicesRef.current) {
 			const serviceCards = servicesRef.current.querySelectorAll(".service-card");
-			serviceCards.forEach((card, i) => observer.observe(card));
+			serviceCards.forEach(card => observer.observe(card));
 		}
 
 		return () => observer.disconnect();
