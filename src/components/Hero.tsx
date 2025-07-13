@@ -20,6 +20,7 @@ export default function Hero() {
 		if (!heroStarsContainer) return;
 
 		const starCount = 150;
+		const movementSpeed = 0.5;
 
 		// Render initial stars that will be everywhere on-screen and disappear when they reach the center
 		for (let i = 0; i < starCount * 0.5; i++) {
@@ -32,7 +33,7 @@ export default function Hero() {
 			const deltaY = 50 - y;
 
 			const distanceFromCenter = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-			const animationDuration = distanceFromCenter * 1;
+			const animationDuration = distanceFromCenter * movementSpeed;
 
 			// Set initial position
 			star.style.left = x + "%";
@@ -72,7 +73,7 @@ export default function Hero() {
 					break;
 			}
 
-			const animationDuration = 60;
+			const animationDuration = 60 * movementSpeed;
 
 			// Set initial position
 			star.style.left = x + "%";
