@@ -11,7 +11,7 @@ const services = [
 		icon: icon1,
 		title: "Dizajn Sajta: UI/UX",
 		description:
-			"Stvaramo dizajn za vas sajt koji izgleda moderno, pristupacno, funkcionalno - sa glavnim ciljem da privuce i zadovolji korisnike."
+			"Stvaramo dizajn za vas sajt koji izgleda moderno, pristupacno, funkcionalno - sa glavnim ciljem da privuce korisnike i da im omoguci da se lako upoznaju sa Vasom biznisom."
 	},
 	{
 		id: 2,

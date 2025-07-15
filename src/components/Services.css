@@ -44,6 +44,7 @@
 	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 	opacity: 0;
 	transform: translateY(60px);
+	outline: 1px solid transparent;
 }
 
 .service-card.animate-in {
@@ -54,7 +55,8 @@
 .service-card:hover {
 	transform: translateY(-10px) scale(1.02);
 	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-	border: 2px solid rgba(168, 85, 247, 0.5);
+	border-color: rgba(168, 85, 247, 0.5);
+	outline-color: rgba(168, 85, 247, 0.5);
 	background: rgba(255, 255, 255, 0.08);
 }
 
