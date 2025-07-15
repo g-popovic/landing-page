@@ -18,7 +18,7 @@ const services = [
 		icon: icon1,
 		title: "Izrada Web Sajta",
 		description:
-			"Koristeci najnovije tehnologije, nas tim strucjaka ce razviti web sajt za Vas biznis koji ce biti brz, siguran i funkcionalan."
+			"Koristeci najnovije tehnologije, nas tim strucjaka ce razviti web sajt za Vas biznis koji ce biti brz, siguran i funkcionalan. Koristimo iste tehnologije koje pokrecu neke od najvecih sajtova na svetu."
 	},
 	{
 		id: 4,
@@ -64,7 +64,7 @@ export default function Services() {
 
 	function renderServiceCard(service: (typeof services)[0]) {
 		return (
-			<div className='service-card' key={service.id} data-index={service.id}>
+			<div className='card service-card' key={service.id} data-index={service.id}>
 				<Image className='service-icon' src={service.icon} alt={service.title} />
 				<h3>{service.title}</h3>
 				<p>{service.description}</p>
