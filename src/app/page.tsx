@@ -6,6 +6,7 @@ import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScriptSetup from "@/components/util/ScriptSetup";
 
 export default function Home() {
 	return (
@@ -18,6 +19,8 @@ export default function Home() {
 			<Process />
 			<Contact />
 			<Footer />
+
+			<ScriptSetup />
 		</div>
 	);
 }
