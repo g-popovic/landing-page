@@ -1,8 +1,30 @@
 /* Services Section */
 
+/* TODO: Move this style in Global so its reusable */
 .services {
-	padding: 5rem 0;
-	background: #0a0a0a;
+	padding: 0 0 0;
+	background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+		radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 10rem;
+		background: linear-gradient(to bottom, rgb(4, 0, 8) 10%, transparent 100%);
+	}
+
+	&::before {
+		margin-bottom: 2rem;
+	}
+
+	&::after {
+		margin-top: 5rem;
+		background: linear-gradient(to top, #0a0a0a 10%, transparent 100%);
+	}
 }
 
 .services-grid {
@@ -32,13 +54,16 @@
 .service-card:hover {
 	transform: translateY(-10px) scale(1.02);
 	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-	border: 2px solid rgba(168, 85, 247, 0.3);
+	border: 2px solid rgba(168, 85, 247, 0.5);
 	background: rgba(255, 255, 255, 0.08);
 }
 
 .service-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
+	margin: 0 0 2rem;
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	display: block;
 }
 
 .service-card h3 {
@@ -71,6 +96,17 @@
 	left: 0;
 	color: #a855f7;
 	font-weight: bold;
+}
+
+.section-header {
+	transform: translateY(100px);
+	opacity: 0;
+	transition: 0.5s ease-out;
+
+	&.animate-in {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 /* Mobile Services */

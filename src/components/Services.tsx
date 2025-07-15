@@ -2,60 +2,36 @@
 
 import { useEffect, useRef } from "react";
 import "./Services.css";
+import icon1 from "../../public/icons/icon-1.svg";
+import Image from "next/image";
 
 const services = [
 	{
 		id: 1,
-		icon: "🌐",
-		title: "Web Development",
+		icon: icon1,
+		title: "Dizajn Sajta: UI/UX",
 		description:
-			"Moderne web aplikacije izgrađene sa najnovijim tehnologijama. React, Next.js, Node.js i više.",
-		features: ["Custom web aplikacije", "Progressive Web Apps", "API Development"]
+			"Stvaramo dizajn za vas sajt koji izgleda moderno, pristupacno, funkcionalno - sa glavnim ciljem da privuce i zadovolji korisnike."
 	},
 	{
 		id: 2,
-		icon: "🛒",
-		title: "E-commerce",
+		icon: icon1,
+		title: "Izrada Web Sajta",
 		description:
-			"Kompletna e-commerce rešenja koja povećavaju prodaju i poboljšavaju korisničko iskustvo.",
-		features: ["Online prodavnice", "Payment integration", "Inventory management"]
-	},
-	{
-		id: 3,
-		icon: "📱",
-		title: "Mobile Apps",
-		description:
-			"Cross-platform mobilne aplikacije koje rade savršeno na iOS i Android uređajima.",
-		features: ["React Native", "Flutter development", "App Store deployment"]
+			"Koristeci najnovije tehnologije, nas tim strucjaka ce razviti web sajt za Vas biznis koji ce biti brz, siguran i funkcionalan."
 	},
 	{
 		id: 4,
-		icon: "🎨",
-		title: "UI/UX Design",
+		icon: icon1,
+		title: "Lansiranje i Održavanje",
 		description:
-			"Kreativni dizajn koji kombinuje estetiku sa funkcionalnosti za optimalno korisničko iskustvo.",
-		features: ["User research", "Wireframing & prototyping", "Visual design"]
-	},
-	{
-		id: 5,
-		icon: "🔧",
-		title: "Maintenance & Support",
-		description:
-			"Kontinuirana podrška i održavanje za sigurnost i optimalnu performanse vašeg sajta.",
-		features: ["Regular updates", "Security monitoring", "Performance optimization"]
-	},
-	{
-		id: 6,
-		icon: "📊",
-		title: "Digital Marketing",
-		description:
-			"SEO optimizacija i digitalni marketing strategije za povećanje online prisustva.",
-		features: ["SEO optimization", "Analytics setup", "Performance tracking"]
+			"Vas sajt ce biti hostovan na najsigurnijim serverima, kao i održavan i ažuriran u skladu sa najnovijim tehnologijama. Zahvaljujuci nasoj SEO optimizaciji, maksimalizujemo sanse da se vas sajt prikaze na svim pretrazivacima."
 	}
 ];
 
 export default function Services() {
 	const servicesRef = useRef<HTMLDivElement>(null);
+	const headerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const observerOptions = {
@@ -79,20 +55,19 @@ export default function Services() {
 			serviceCards.forEach(card => observer.observe(card));
 		}
 
+		if (headerRef.current) {
+			observer.observe(headerRef.current);
+		}
+
 		return () => observer.disconnect();
 	}, []);
 
 	function renderServiceCard(service: (typeof services)[0]) {
 		return (
 			<div className='service-card' key={service.id} data-index={service.id}>
-				<div className='service-icon'>{service.icon}</div>
+				<Image className='service-icon' src={service.icon} alt={service.title} />
 				<h3>{service.title}</h3>
 				<p>{service.description}</p>
-				<ul className='service-features'>
-					{service.features.map((feature, index) => (
-						<li key={index}>{feature}</li>
-					))}
-				</ul>
 			</div>
 		);
 	}
@@ -100,7 +75,7 @@ export default function Services() {
 	return (
 		<section id='services' className='services' ref={servicesRef}>
 			<div className='container'>
-				<div className='section-header'>
+				<div className='section-header' ref={headerRef}>
 					<h2>Naše usluge</h2>
 					<p>Pružamo kompletna digitalna rešenja prilagođena vašim potrebama</p>
 				</div>

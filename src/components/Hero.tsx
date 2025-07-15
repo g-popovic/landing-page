@@ -154,13 +154,6 @@ export default function Hero() {
 		initLoadingScreen();
 	}, []);
 
-	const scrollToSection = (sectionId: string) => {
-		const element = document.getElementById(sectionId);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
 	return (
 		<section id='home' className='hero'>
 			{/* Hero Stars Background */}
@@ -193,17 +186,11 @@ export default function Hero() {
 						{subtitle}
 					</p>
 					<div className='hero-buttons'>
-						<Link
-							href='#contact'
-							className='btn btn-primary'
-							onClick={() => scrollToSection("contact")}>
+						<Link href='#contact' className='btn btn-primary'>
 							Započni projekt
 						</Link>
-						<Link
-							href='#portfolio'
-							className='btn btn-secondary'
-							onClick={() => scrollToSection("portfolio")}>
-							Pogledaj naš rad
+						<Link href='#services' className='btn btn-secondary'>
+							Naše usluge
 						</Link>
 					</div>
 				</div>
