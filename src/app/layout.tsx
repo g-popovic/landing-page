@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
 	title: "Quark Digital - Web Development Agency Montenegro",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='sr'>
-			<body className={inter.className}>{children}</body>
+			<body className={`${poppins.className} ${robotoMono.className}`}>{children}</body>
 		</html>
 	);
 }

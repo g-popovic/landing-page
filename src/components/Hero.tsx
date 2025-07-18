@@ -19,7 +19,7 @@ export default function Hero() {
 		const heroStarsContainer = heroStarsRef.current;
 		if (!heroStarsContainer) return;
 
-		const starCount = 150;
+		const starCount = 200;
 		const movementSpeed = 0.5;
 
 		// Render initial stars that will be everywhere on-screen and disappear when they reach the center
@@ -106,8 +106,13 @@ export default function Hero() {
 			return overlay;
 		};
 
-		const wordByWordLoader = (element: HTMLElement, text: string, wordDelay: number = 100) => {
-			const words = text.split(" ");
+		const wordByWordLoader = (
+			element: HTMLElement,
+			text: string,
+			wordDelay: number = 100,
+			separator = " "
+		) => {
+			const words = text.split(separator);
 			const overlay = element.querySelector(".word-overlay") as HTMLElement;
 			if (!overlay) return;
 
@@ -116,13 +121,13 @@ export default function Hero() {
 			words.forEach((word, index) => {
 				const wordSpan = document.createElement("span");
 				wordSpan.className = "word";
-				wordSpan.textContent = word;
+				wordSpan.innerHTML = word.replace(" ", "&nbsp;"); // handle empty spaces
 				wordSpan.style.animationDelay = `${index * wordDelay}ms`;
 				overlay.appendChild(wordSpan);
 
 				// Add space after each word except the last one
 				if (index < words.length - 1) {
-					overlay.appendChild(document.createTextNode(" "));
+					overlay.appendChild(document.createTextNode(separator));
 				}
 			});
 		};
@@ -138,13 +143,13 @@ export default function Hero() {
 				// Start word-by-word loading
 				if (titleRef.current) {
 					setupWordLoading(titleRef.current, title);
-					wordByWordLoader(titleRef.current, title, 200);
+					wordByWordLoader(titleRef.current, title, 30, "");
 				}
 
 				if (subtitleRef.current) {
 					setupWordLoading(subtitleRef.current, subtitle);
 					setTimeout(() => {
-						wordByWordLoader(subtitleRef.current!, subtitle, 50);
+						wordByWordLoader(subtitleRef.current!, subtitle, 80);
 					}, 800);
 				}
 			}, 1500);
