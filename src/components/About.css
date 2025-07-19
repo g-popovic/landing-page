@@ -1,7 +1,7 @@
 /* About Section */
 .about {
 	padding: 0 0 10rem;
-	background: #0a0a0a;
+	/* background: #0a0a0a; */
 	color: white;
 	position: relative;
 	overflow: hidden;

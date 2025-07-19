@@ -1,28 +1,19 @@
 /* Contact Section */
 .contact {
-	padding: 0;
-	background: radial-gradient(circle at 80% 40%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-		radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+	padding: 20rem 0 0;
 
-	&::before,
 	&::after {
 		content: "";
 		display: block;
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 15rem;
-		background: linear-gradient(to bottom, #0a0a0a 10%, transparent 100%);
+		height: 20rem;
+		background: linear-gradient(to top, #0a0a0a 10%, transparent 100%);
 	}
 
 	&::before {
 		margin-bottom: 8rem;
-	}
-
-	&::after {
-		margin-top: 5rem;
-		height: 20rem;
-		background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
 	}
 }
 
