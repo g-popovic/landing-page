@@ -1,6 +1,6 @@
 /* About Section */
 .about {
-	padding: 10rem 0;
+	padding: 0 0 10rem;
 	background: #0a0a0a;
 	color: white;
 	position: relative;
@@ -16,23 +16,43 @@
 	z-index: 1;
 } */
 
-.about::before {
+/* .about::before {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	/* TODO: Undo? */
-	/* background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-		radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%); */
+	 // TODO: Undo? 
+	 background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+		radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%); 
 	opacity: 0.8;
+} */
+
+.about-content {
+	/* display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr 1fr; */
+
+	.img-container {
+		position: relative;
+		height: 30rem;
+		width: 30rem;
+		margin: 0 auto;
+		margin-bottom: 4rem;
+	}
+
+	img {
+		border-radius: 1rem;
+		object-fit: cover;
+		object-position: 50% 80%;
+	}
 }
 
 .about h2 {
 	font-size: 2.5rem;
 	font-weight: 700;
-	margin-bottom: 1.5rem;
+	margin-bottom: 4rem;
 }
 
 .about p {

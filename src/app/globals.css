@@ -14,6 +14,10 @@ body {
 	opacity: 1;
 }
 
+p {
+	font-size: 1.125rem;
+}
+
 h1,
 h2,
 h3,
@@ -85,7 +89,7 @@ html {
 }
 
 .section-header p {
-	font-size: 1.2rem;
+	font-size: 1.25rem;
 	color: rgba(255, 255, 255, 0.7);
 	max-width: 600px;
 	margin: 0 auto;

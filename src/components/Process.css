@@ -27,7 +27,7 @@
 .step-number {
 	width: 60px;
 	height: 60px;
-	background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+	background: #a855f7;
 	color: white;
 	border-radius: 50%;
 	display: flex;
