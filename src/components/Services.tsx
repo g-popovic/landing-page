@@ -23,7 +23,7 @@ const services = [
 	{
 		id: 4,
 		icon: icon1,
-		title: "Lansiranje i Održavanje",
+		title: "Hosting i Održavanje",
 		description:
 			"Vas sajt ce biti hostovan na najsigurnijim serverima, kao i održavan i ažuriran u skladu sa najnovijim tehnologijama. Zahvaljujuci nasoj SEO optimizaciji, maksimalizujemo sanse da se vas sajt prikaze na svim pretrazivacima."
 	}
