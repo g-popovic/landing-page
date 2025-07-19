@@ -1,4 +1,9 @@
 /* Reset and Base Styles */
+
+html {
+	scroll-behavior: smooth;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -29,10 +34,6 @@ h6 {
 	& * {
 		font-family: "Montserrat", monospace;
 	}
-}
-
-html {
-	scroll-behavior: smooth;
 }
 
 /* Global Keyframes */
