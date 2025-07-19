@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins, Roboto_Mono } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import "./globals.css";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const robotoMono = Roboto_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
 	title: "Quark Digital - Web Development Agency Montenegro",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='sr'>
-			<body className={`${poppins.className} ${robotoMono.className}`}>{children}</body>
+			<body className={`${poppins.className} ${montserrat.className}`}>{children}</body>
 		</html>
 	);
 }
