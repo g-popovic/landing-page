@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import "./Contact.css";
+import Image from "next/image";
+import contactIcon1 from "../../public/icons/icon-1.svg";
 
 export default function Contact() {
 	const [formData, setFormData] = useState({
@@ -132,21 +134,36 @@ export default function Contact() {
 						</p>
 						<div className='contact-details'>
 							<div className='contact-item'>
-								<div className='contact-icon'>📍</div>
+								<Image
+									src={contactIcon1}
+									alt='Contact Icon'
+									width={48}
+									height={48}
+								/>
 								<div>
 									<h4>Lokacija</h4>
 									<p>Podgorica, Crna Gora</p>
 								</div>
 							</div>
 							<div className='contact-item'>
-								<div className='contact-icon'>📧</div>
+								<Image
+									src={contactIcon1}
+									alt='Contact Icon'
+									width={48}
+									height={48}
+								/>
 								<div>
 									<h4>Email</h4>
 									<p>hello@quarkdigital.me</p>
 								</div>
 							</div>
 							<div className='contact-item'>
-								<div className='contact-icon'>📞</div>
+								<Image
+									src={contactIcon1}
+									alt='Contact Icon'
+									width={48}
+									height={48}
+								/>
 								<div>
 									<h4>Telefon</h4>
 									<p>+382 69 123 456</p>
