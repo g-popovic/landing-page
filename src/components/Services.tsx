@@ -56,23 +56,20 @@ export default function Services() {
 
 	useEffect(() => {
 		const observerOptions = {
-			threshold: 0.1,
+			threshold: 0.3,
 			rootMargin: "0px 0px -50px 0px"
 		};
 
 		const observer = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
-					const index = parseInt(entry.target.getAttribute("data-index") || "0");
-					setTimeout(() => {
-						entry.target.classList.add("animate-in");
-					}, index * 100);
+					entry.target.classList.add("animate-in");
 				}
 			});
 		}, observerOptions);
 
 		if (servicesRef.current) {
-			const serviceCards = servicesRef.current.querySelectorAll(".service-card");
+			const serviceCards = servicesRef.current.querySelectorAll(".service-timeline-item");
 			serviceCards.forEach(card => observer.observe(card));
 		}
 
@@ -85,8 +82,10 @@ export default function Services() {
 
 	function renderServiceCard(service: (typeof services)[0], index: number) {
 		return (
-			<div className='service-timeline-item' key={service.id}>
-				<article className='card service-card' data-index={index}>
+			<div className='service-timeline-item ' key={service.id} data-index={index}>
+				<article className='card service-card'>
+					<div className='service-card-border' />
+					<div className='service-card-background' />
 					<h3>{service.title}</h3>
 					<p>{service.description}</p>
 					<ul className='service-features'>
@@ -105,8 +104,8 @@ export default function Services() {
 				<div className='section-header' ref={headerRef}>
 					<h2>Proces izrade u 4 koraka</h2>
 					<p>
-						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran
-						na rezultate i nove klijente.
+						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran na
+						rezultate i nove klijente.
 					</p>
 				</div>
 				<div className='services-timeline'>{services.map(renderServiceCard)}</div>
