@@ -4,11 +4,25 @@ html {
 	scroll-behavior: smooth;
 }
 
+:root {
+	/* --purple-main: #5e65da; */
+	--purple-main: #444bc6;
+	--purple-accent-08: color-mix(in srgb, var(--purple-main) 8%, transparent);
+	--purple-accent-10: color-mix(in srgb, var(--purple-main) 10%, transparent);
+	--purple-accent-30: color-mix(in srgb, var(--purple-main) 30%, transparent);
+	--purple-accent-40: color-mix(in srgb, var(--purple-main) 40%, transparent);
+	--purple-accent-50: color-mix(in srgb, var(--purple-main) 50%, transparent);
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Poppins", "Inter", -apple-system, sans-serif;
+	font-family:
+		"Poppins",
+		"Inter",
+		-apple-system,
+		sans-serif;
 }
 
 body {
@@ -40,10 +54,10 @@ h6 {
 @keyframes wordFadeIn {
 	0% {
 		opacity: 0;
-		transform: translateY(15px);
+		transform: translateY(70%);
 		filter: blur(8px);
 	}
-	40% {
+	60% {
 		opacity: 0.3;
 		transform: translateY(0);
 	}
@@ -128,15 +142,15 @@ h6 {
 }
 
 .btn-primary {
-	background: #a855f7;
+	background: var(--purple-main);
 	color: white;
-	box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);
+	box-shadow: 0 8px 32px var(--purple-accent-30);
 	border: none;
 }
 
 .btn-primary:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4);
+	box-shadow: 0 12px 40px var(--purple-accent-40);
 }
 
 .btn-secondary {
@@ -202,17 +216,18 @@ h6 {
 	&:hover {
 		transform: translateY(-10px) scale(1.02);
 		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-		border-color: rgba(168, 85, 247, 0.5);
-		outline-color: rgba(168, 85, 247, 0.5);
+		border-color: var(--purple-accent-50);
+		outline-color: var(--purple-accent-50);
 		background: rgba(255, 255, 255, 0.08);
 	}
 }
 
 .page-container {
-	background: #0a0a0a,
-		radial-gradient(circle at 90% 130vh, rgba(168, 85, 247, 0.1) 0%, transparent 15%),
+	background:
+		#0a0a0a,
+		radial-gradient(circle at 90% 130vh, var(--purple-accent-10) 0%, transparent 15%),
 		radial-gradient(circle at 10% 170vh, rgba(59, 130, 246, 0.08) 0%, transparent 12%),
 		/* radial-gradient(circle at 50% 225vh, rgba(255, 255, 255, 0.05) 0%, transparent 15%), */
-			radial-gradient(circle at 90% 420vh, rgba(168, 85, 247, 0.08) 0%, transparent 20%),
+		radial-gradient(circle at 90% 420vh, var(--purple-accent-08) 0%, transparent 20%),
 		radial-gradient(circle at 10% 440vh, rgba(59, 130, 246, 0.08) 0%, transparent 20%);
 }

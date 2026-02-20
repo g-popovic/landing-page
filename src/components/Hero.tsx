@@ -5,15 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import "./Hero.css";
 
+const HERO_RING_1_WIDTH = 500;
+const HERO_RING_2_WIDTH = 250;
+
 export default function Hero() {
 	const heroStarsRef = useRef<HTMLDivElement>(null);
 	const heroContainerRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const subtitleRef = useRef<HTMLParagraphElement>(null);
 
-	const title = "Agencija Najjaca";
+	const title = "Đorđe Popović";
 	const subtitle =
-		"Profesionalna web development agencija iz Crne Gore specijalizovana za moderne web aplikacije, e-commerce platforme i digitalne transformacije.";
+		"Softverski Inženjer sa preko 5+ godina radnog iskustva. Specijalizovan u izradi modernih web sajtova i aplikacija.";
 
 	function createHeroStars() {
 		const heroStarsContainer = heroStarsRef.current;
@@ -143,13 +146,13 @@ export default function Hero() {
 				// Start word-by-word loading
 				if (titleRef.current) {
 					setupWordLoading(titleRef.current, title);
-					wordByWordLoader(titleRef.current, title, 30, "");
+					wordByWordLoader(titleRef.current, title, 200);
 				}
 
 				if (subtitleRef.current) {
 					setupWordLoading(subtitleRef.current, subtitle);
 					setTimeout(() => {
-						wordByWordLoader(subtitleRef.current!, subtitle, 80);
+						wordByWordLoader(subtitleRef.current!, subtitle, 50);
 					}, 800);
 				}
 			}, 1500);
@@ -170,15 +173,15 @@ export default function Hero() {
 					src='/hero-ring.png'
 					alt=''
 					className='hero-ring-2'
-					width={310}
-					height={310}
+					width={HERO_RING_2_WIDTH}
+					height={HERO_RING_2_WIDTH}
 				/>
 				<Image
 					src='/hero-ring.png'
 					alt=''
 					className='hero-ring-1'
-					width={400}
-					height={400}
+					width={HERO_RING_1_WIDTH}
+					height={HERO_RING_1_WIDTH}
 				/>
 			</div>
 

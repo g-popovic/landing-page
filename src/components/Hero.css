@@ -4,7 +4,7 @@
 	display: flex;
 	align-items: center;
 	background: #030303;
-	padding-top: 80px;
+	padding-top: 40px;
 	position: relative;
 	overflow: hidden;
 }
@@ -48,32 +48,33 @@
 		left: 0;
 		transform: translate(-50%, -50%);
 		border-radius: 100%;
-		width: 400px;
-		height: 400px;
-		background: radial-gradient(circle 200px at center, #030303 90%, transparent 100%);
+		width: 550px;
+		height: 550px;
+		background: radial-gradient(circle 500px at center, #030303 90%, transparent 100%);
 	}
 }
 
-.hero-rings .hero-ring-1,
-.hero-rings .hero-ring-2 {
+.hero-ring-1,
+.hero-ring-2 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	filter: blur(10px);
-	opacity: 0.5;
+	opacity: 0.7;
 }
 
 .hero-ring-1 {
-	width: 450px;
-	height: 450px;
+	width: 550px;
+	height: 550px;
 	animation: rotateClockwise 12s linear infinite;
 }
 
 .hero-ring-2 {
-	width: 350px;
-	height: 350px;
-	animation: rotateCounterClockwise 12s linear infinite;
+	width: 0;
+	height: 0;
+	animation: rotateCounterClockwise 18s linear infinite;
+	/* opacity: 0.4; */
 }
 
 .hero::before {
@@ -112,9 +113,9 @@
 .hero-subtitle {
 	font-size: 1.2rem;
 	color: rgba(255, 255, 255, 0.7);
-	margin-bottom: 3rem;
+	margin-bottom: 3.5rem;
 	line-height: 1.6;
-	max-width: 800px;
+	max-width: 600px;
 	position: relative;
 }
 
@@ -127,7 +128,7 @@
 
 .hero-buttons .btn {
 	opacity: 0;
-	animation: heroContentFadeIn 1s ease-out 2.5s forwards;
+	animation: heroContentFadeIn 1.5s ease-in-out 1s forwards;
 }
 
 /* Word-by-word loading styles */
@@ -135,11 +136,11 @@
 .hero-subtitle .word {
 	display: inline-block;
 	opacity: 0;
-	animation: wordFadeIn 1s ease-out forwards;
+	animation: wordFadeIn 1s ease-in-out forwards;
 }
 
 .hero-title .word {
-	animation-duration: 1.3s;
+	animation-duration: 2s;
 }
 
 .hero-subtitle .word {

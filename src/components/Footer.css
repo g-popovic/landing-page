@@ -41,7 +41,7 @@
 }
 
 .footer-section ul li a:hover {
-	color: #a855f7;
+	color: var(--purple-main);
 }
 
 .footer-bottom {

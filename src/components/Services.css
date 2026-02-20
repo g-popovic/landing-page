@@ -61,7 +61,7 @@
 	content: "✓";
 	position: absolute;
 	left: 0;
-	color: #a855f7;
+	color: var(--purple-main);
 	font-weight: bold;
 }
 
