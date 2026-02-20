@@ -5,13 +5,14 @@ html {
 }
 
 :root {
-	/* --purple-main: #5e65da; */
-	--purple-main: #444bc6;
-	--purple-accent-08: color-mix(in srgb, var(--purple-main) 8%, transparent);
-	--purple-accent-10: color-mix(in srgb, var(--purple-main) 10%, transparent);
-	--purple-accent-30: color-mix(in srgb, var(--purple-main) 30%, transparent);
-	--purple-accent-40: color-mix(in srgb, var(--purple-main) 40%, transparent);
-	--purple-accent-50: color-mix(in srgb, var(--purple-main) 50%, transparent);
+	/* --brand-main: #5e65da; */
+	--brand-main: #444bc6;
+	--brand-accent-08: color-mix(in srgb, var(--brand-main) 8%, transparent);
+	--brand-accent-10: color-mix(in srgb, var(--brand-main) 10%, transparent);
+	--brand-accent-30: color-mix(in srgb, var(--brand-main) 30%, transparent);
+	--brand-accent-40: color-mix(in srgb, var(--brand-main) 40%, transparent);
+	--brand-accent-50: color-mix(in srgb, var(--brand-main) 50%, transparent);
+	--border-neutral: rgba(255, 255, 255, 0.12);
 }
 
 * {
@@ -142,15 +143,15 @@ h6 {
 }
 
 .btn-primary {
-	background: var(--purple-main);
+	background: var(--brand-main);
 	color: white;
-	box-shadow: 0 8px 32px var(--purple-accent-30);
+	box-shadow: 0 8px 32px var(--brand-accent-30);
 	border: none;
 }
 
 .btn-primary:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 12px 40px var(--purple-accent-40);
+	box-shadow: 0 12px 40px var(--brand-accent-40);
 }
 
 .btn-secondary {
@@ -214,20 +215,19 @@ h6 {
 	}
 
 	&:hover {
-		transform: translateY(-10px) scale(1.02);
+		transform: scale(1.01);
 		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-		border-color: var(--purple-accent-50);
-		outline-color: var(--purple-accent-50);
-		background: rgba(255, 255, 255, 0.08);
+		border-color: var(--brand-accent-50);
+		outline-color: var(--brand-accent-50);
 	}
 }
 
 .page-container {
 	background:
 		#0a0a0a,
-		radial-gradient(circle at 90% 130vh, var(--purple-accent-10) 0%, transparent 15%),
+		radial-gradient(circle at 90% 130vh, var(--brand-accent-10) 0%, transparent 15%),
 		radial-gradient(circle at 10% 170vh, rgba(59, 130, 246, 0.08) 0%, transparent 12%),
 		/* radial-gradient(circle at 50% 225vh, rgba(255, 255, 255, 0.05) 0%, transparent 15%), */
-		radial-gradient(circle at 90% 420vh, var(--purple-accent-08) 0%, transparent 20%),
+		radial-gradient(circle at 90% 420vh, var(--brand-accent-08) 0%, transparent 20%),
 		radial-gradient(circle at 10% 440vh, rgba(59, 130, 246, 0.08) 0%, transparent 20%);
 }

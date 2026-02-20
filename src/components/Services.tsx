@@ -2,30 +2,51 @@
 
 import { useEffect, useRef } from "react";
 import "./Services.css";
-import icon1 from "../../public/icons/icon-1.svg";
-import Image from "next/image";
 
 const services = [
 	{
 		id: 1,
-		icon: icon1,
-		title: "Dizajn Sajta: UI/UX",
+		title: "Dizajn",
 		description:
-			"Stvaramo dizajn za vas sajt koji izgleda moderno, pristupacno, funkcionalno - sa glavnim ciljem da privuce korisnike i da im omoguci da se lako upoznaju sa Vasom biznisom."
+			"Kreiramo izgled i strukturu sajta koja odmah gradi poverenje i jasno komunicira vrednost vaše ponude.",
+		features: [
+			"Jasna poruka i pozicioniranje ponude",
+			"UI/UX koji vodi korisnika do kontakta",
+			"Vizuelni stil usklađen sa vašim brendom"
+		]
 	},
 	{
 		id: 2,
-		icon: icon1,
-		title: "Izrada Web Sajta",
+		title: "Izrada",
 		description:
-			"Koristeci najnovije tehnologije, nas tim strucjaka ce razviti web sajt za Vas biznis koji ce biti brz, siguran i funkcionalan. Koristimo iste tehnologije koje pokrecu neke od najvecih sajtova na svetu."
+			"Pretvaramo dizajn u brz, stabilan i moderan sajt koji izgleda odlično na svim uređajima.",
+		features: [
+			"Responsivan prikaz na telefonu, tabletu i desktopu",
+			"Moderna tehnologija i čist kod",
+			"Fokus na performanse, sigurnost i stabilnost"
+		]
+	},
+	{
+		id: 3,
+		title: "Optimizacija",
+		description:
+			"Podešavamo SEO i tehničke detalje kako bi vaš sajt imao bolje šanse da rangira visoko na Google pretrazi.",
+		features: [
+			"On-page SEO: naslovi, meta opisi i struktura",
+			"Tehnička optimizacija za bolji ranking",
+			"Poboljšanje brzine i korisničkog iskustva"
+		]
 	},
 	{
 		id: 4,
-		icon: icon1,
-		title: "Hosting i Održavanje",
+		title: "Lansiranje i hosting",
 		description:
-			"Vas sajt ce biti hostovan na najsigurnijim serverima, kao i održavan i ažuriran u skladu sa najnovijim tehnologijama. Zahvaljujuci nasoj SEO optimizaciji, maksimalizujemo sanse da se vas sajt prikaze na svim pretrazivacima."
+			"Objavljujemo sajt na pouzdan hosting i ostajemo uz vas kroz održavanje i podršku nakon lansiranja.",
+		features: [
+			"Bezbedno lansiranje bez zastoja",
+			"Monitoring, backup i redovna ažuriranja",
+			"Brza podrška kad god vam je potrebna"
+		]
 	}
 ];
 
@@ -62,12 +83,18 @@ export default function Services() {
 		return () => observer.disconnect();
 	}, []);
 
-	function renderServiceCard(service: (typeof services)[0]) {
+	function renderServiceCard(service: (typeof services)[0], index: number) {
 		return (
-			<div className='card service-card' key={service.id} data-index={service.id}>
-				<Image className='service-icon' src={service.icon} alt={service.title} />
-				<h3>{service.title}</h3>
-				<p>{service.description}</p>
+			<div className='service-timeline-item' key={service.id}>
+				<article className='card service-card' data-index={index}>
+					<h3>{service.title}</h3>
+					<p>{service.description}</p>
+					<ul className='service-features'>
+						{service.features.map(feature => (
+							<li key={feature}>{feature}</li>
+						))}
+					</ul>
+				</article>
 			</div>
 		);
 	}
@@ -76,10 +103,13 @@ export default function Services() {
 		<section id='services' className='services' ref={servicesRef}>
 			<div className='container'>
 				<div className='section-header' ref={headerRef}>
-					<h2>Naše usluge</h2>
-					<p>Pružamo kompletna digitalna rešenja prilagođena vašim potrebama</p>
+					<h2>Proces izrade u 4 koraka</h2>
+					<p>
+						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran
+						na rezultate i nove klijente.
+					</p>
 				</div>
-				<div className='services-grid'>{services.map(renderServiceCard)}</div>
+				<div className='services-timeline'>{services.map(renderServiceCard)}</div>
 			</div>
 		</section>
 	);
