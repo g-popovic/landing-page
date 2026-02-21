@@ -1,49 +1,24 @@
-/* About Section */
 .about {
 	padding: 0 0 10rem;
-	/* background: #0a0a0a; */
 	color: white;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
+	max-width: 40rem;
+	margin: 0 auto;
 }
 
-/* .section-start-blur {
-	width: 100vw;
-	height: 10rem;
-	background: linear-gradient(to bottom, #0a0a0a 10%, transparent 80%);
-	position: relative;
-	z-index: 1;
-} */
-
-/* .about::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	 // TODO: Undo? 
-	 background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-		radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%); 
-	opacity: 0.8;
-} */
-
 .about-content {
-	/* display: grid;
-	gap: 2rem;
-	grid-template-columns: 1fr 1fr; */
-
 	.img-container {
 		position: relative;
-		height: 30rem;
-		width: 30rem;
+		height: 15rem;
+		width: 15rem;
 		margin: 0 auto;
 		margin-bottom: 4rem;
 	}
 
 	img {
-		border-radius: 1rem;
+		border-radius: 100%;
 		object-fit: cover;
 		object-position: 50% 80%;
 	}

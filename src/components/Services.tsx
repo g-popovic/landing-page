@@ -85,7 +85,6 @@ export default function Services() {
 			<div className='service-timeline-item ' key={service.id} data-index={index}>
 				<article className='card service-card'>
 					<div className='service-card-border' />
-					<div className='service-card-background' />
 					<h3>{service.title}</h3>
 					<p>{service.description}</p>
 					<ul className='service-features'>

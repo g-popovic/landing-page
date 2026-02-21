@@ -77,7 +77,7 @@ export default function Navigation() {
 							href='#about'
 							className={`nav-link ${activeSection === "about" ? "active" : ""}`}
 							onClick={() => scrollToSection("about")}>
-							O nama
+							O meni
 						</Link>
 					</li>
 					<li className='nav-item'>
