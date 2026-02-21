@@ -9,7 +9,7 @@
 		left: 0;
 		width: 100vw;
 		height: 12rem;
-		background: linear-gradient(to bottom, rgb(4, 0, 8) 10%, transparent 100%);
+		background: linear-gradient(to bottom, rgb(3, 3, 3) 10%, rgba(3, 3, 3, 0) 100%);
 	}
 
 	&::before {

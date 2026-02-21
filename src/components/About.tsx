@@ -10,7 +10,7 @@ export default function About() {
 			<div className='container'>
 				<h2>O meni</h2>
 
-				<div className='about-content'>
+				<div className='about-content card highlighted'>
 					<div className='img-container'>
 						<Image src={aboutImage} alt='Đorđe Popović' fill={true} />
 					</div>

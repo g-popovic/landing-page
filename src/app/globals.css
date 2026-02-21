@@ -7,11 +7,12 @@ html {
 :root {
 	/* --brand-main: #5e65da; */
 	--brand-main: #444bc6;
-	--brand-accent-08: color-mix(in srgb, var(--brand-main) 8%, transparent);
-	--brand-accent-10: color-mix(in srgb, var(--brand-main) 10%, transparent);
-	--brand-accent-30: color-mix(in srgb, var(--brand-main) 30%, transparent);
-	--brand-accent-40: color-mix(in srgb, var(--brand-main) 40%, transparent);
-	--brand-accent-50: color-mix(in srgb, var(--brand-main) 50%, transparent);
+	--brand-main-rgb: 68, 75, 198;
+	--brand-accent-08: rgba(var(--brand-main-rgb), 0.08);
+	--brand-accent-10: rgba(var(--brand-main-rgb), 0.1);
+	--brand-accent-30: rgba(var(--brand-main-rgb), 0.3);
+	--brand-accent-40: rgba(var(--brand-main-rgb), 0.4);
+	--brand-accent-50: rgba(var(--brand-main-rgb), 0.5);
 	--border-neutral: rgba(255, 255, 255, 0.1);
 	--border-radius: 24px;
 }
@@ -282,10 +283,7 @@ h6 {
 
 .page-container {
 	background:
-		#0a0a0a,
-		radial-gradient(circle at 90% 130vh, var(--brand-accent-10) 0%, transparent 15%),
-		radial-gradient(circle at 10% 170vh, rgba(59, 130, 246, 0.08) 0%, transparent 12%),
-		/* radial-gradient(circle at 50% 225vh, rgba(255, 255, 255, 0.05) 0%, transparent 15%), */
-		radial-gradient(circle at 90% 420vh, var(--brand-accent-08) 0%, transparent 20%),
-		radial-gradient(circle at 10% 440vh, rgba(59, 130, 246, 0.08) 0%, transparent 20%);
+		radial-gradient(circle at 87% 28%, var(--brand-accent-08) 0%, transparent 13%),
+		radial-gradient(circle at 70% 50%, var(--brand-accent-10) 0%, transparent 23%),
+		radial-gradient(circle at 00% 74%, var(--brand-accent-08) 0%, transparent 18%);
 }
