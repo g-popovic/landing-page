@@ -99,9 +99,9 @@
 		),
 		linear-gradient(
 			160deg,
-			rgba(255, 255, 255, 0.045) 0%,
-			rgba(255, 255, 255, 0.022) 40%,
-			rgba(255, 255, 255, 0.012) 100%
+			rgba(255, 255, 255, 0.035) 0%,
+			rgba(255, 255, 255, 0.017) 40%,
+			rgba(255, 255, 255, 0.008) 100%
 		),
 		radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.055) 1px, transparent 0);
 	background-size:
