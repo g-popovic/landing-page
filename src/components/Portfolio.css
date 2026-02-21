@@ -1,12 +1,10 @@
 /* Portfolio Section */
 .portfolio {
 	padding: 10rem 0 0;
-	/* background: #0a0a0a; */
 }
 
 .portfolio-item {
 	padding: 0;
-	overflow: hidden;
 	margin-bottom: 3rem;
 	display: grid;
 	grid-template-columns: 2fr 3fr;
@@ -15,6 +13,8 @@
 
 .portfolio-image {
 	position: relative;
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+	overflow: hidden;
 
 	img {
 		object-fit: cover;

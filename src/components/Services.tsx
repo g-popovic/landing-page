@@ -83,8 +83,7 @@ export default function Services() {
 	function renderServiceCard(service: (typeof services)[0], index: number) {
 		return (
 			<div className='service-timeline-item ' key={service.id} data-index={index}>
-				<article className='card service-card'>
-					<div className='service-card-border' />
+				<article className='card highlighted service-card'>
 					<h3>{service.title}</h3>
 					<p>{service.description}</p>
 					<ul className='service-features'>
