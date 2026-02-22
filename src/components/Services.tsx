@@ -100,7 +100,7 @@ export default function Services() {
 		<section id='services' className='services' ref={servicesRef}>
 			<div className='container'>
 				<div className='section-header' ref={headerRef}>
-					<h2>Proces izrade u 4 koraka</h2>
+					<h2>Usluge - Proces izrade u 4 koraka</h2>
 					<p>
 						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran na
 						rezultate i nove klijente.

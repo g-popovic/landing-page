@@ -13,8 +13,8 @@ export default function Home() {
 			<Navigation />
 			<Hero />
 			<Services />
-			<About />
 			<Portfolio />
+			<About />
 			<Contact />
 			<Footer />
 

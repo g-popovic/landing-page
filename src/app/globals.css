@@ -279,11 +279,12 @@ h6 {
 .animate-in {
 	opacity: 1;
 	transform: translateY(0);
+	filter: blur(0);
 }
 
 .page-container {
 	background:
 		radial-gradient(circle at 87% 28%, var(--brand-accent-08) 0%, transparent 13%),
-		radial-gradient(circle at 70% 50%, var(--brand-accent-10) 0%, transparent 23%),
-		radial-gradient(circle at 00% 74%, var(--brand-accent-08) 0%, transparent 18%);
+		radial-gradient(circle at 70% 75%, var(--brand-accent-10) 0%, transparent 23%),
+		radial-gradient(circle at 10% 53%, var(--brand-accent-08) 0%, transparent 18%);
 }
