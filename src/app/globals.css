@@ -13,7 +13,7 @@ html {
 	--brand-accent-30: rgba(var(--brand-main-rgb), 0.3);
 	--brand-accent-40: rgba(var(--brand-main-rgb), 0.4);
 	--brand-accent-50: rgba(var(--brand-main-rgb), 0.5);
-	--blue-accent-20: rgba(68, 109, 198, 0.2);
+	--blue-accent: rgba(68, 109, 198, 0.13);
 	--border-neutral: rgba(255, 255, 255, 0.1);
 	--border-radius: 24px;
 }
@@ -287,6 +287,6 @@ h2 {
 	background:
 		radial-gradient(circle at 87% 29%, var(--brand-accent-10) 0%, transparent 15%),
 		radial-gradient(circle at 10% 53%, var(--brand-accent-08) 0%, transparent 18%),
-		radial-gradient(circle at 15% 78%, var(--brand-accent-10) 0%, transparent 17%),
-		radial-gradient(circle at 99% 74%, var(--blue-accent-20) 0%, transparent 10%);
+		radial-gradient(circle at 15% 78%, var(--brand-accent-08) 0%, transparent 20%),
+		radial-gradient(circle at 99% 74%, var(--blue-accent) 0%, transparent 15%);
 }
