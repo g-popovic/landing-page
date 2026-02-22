@@ -171,7 +171,7 @@ export default function Contact() {
 							</div>
 						</div>
 					</div>
-					<div className='contact-form'>
+					<div className='contact-form card'>
 						<form onSubmit={handleSubmit}>
 							<div className='form-group'>
 								<input
