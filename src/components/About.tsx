@@ -14,7 +14,7 @@ export default function About() {
 					</div>
 				</div>
 
-				<div className='card'>
+				<div>
 					<h2>Biografija</h2>
 
 					<p>

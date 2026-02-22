@@ -14,12 +14,12 @@ export default function Contact() {
 						Imate pitanja? Spreman sam da pomognem Vama i Vasem projektu na najbolji
 						mogući način. Pošaljite mi poruku ili pozovite direktno.
 					</p>
-					<div className='contact-list'>
+					<div className='contact-list card'>
 						<div className='contact-item'>
 							<Image src={icon} alt='Contact Icon' width={48} height={48} />
 							<div>
 								<h4>Lokacija</h4>
-								<p>Podgorica - Budva, Crna Gora</p>
+								<p>Podgorica Budva, Crna Gora</p>
 							</div>
 						</div>
 						<div className='contact-item'>
