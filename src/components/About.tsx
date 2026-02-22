@@ -6,14 +6,17 @@ import aboutImage from "../../public/avatar.jpg";
 
 export default function About() {
 	return (
-		<section id='about' className='about'>
-			<div className='container'>
-				<h2>O meni</h2>
-
-				<div className='about-content card highlighted'>
+		<section id='about' className='about container'>
+			<div className='about-content'>
+				<div className='about-text '>
 					<div className='img-container'>
 						<Image src={aboutImage} alt='Đorđe Popović' fill={true} />
 					</div>
+				</div>
+
+				<div>
+					<h2>Biografija</h2>
+
 					<p>
 						Ja sam Đorđe Popović, full-stack developer sa više od 5 godine iskustva u
 						izradi web i mobilnih proizvoda. Pomažem malim biznisima i preduzetnicima da
