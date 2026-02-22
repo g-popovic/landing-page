@@ -5,7 +5,7 @@ html {
 }
 
 :root {
-	/* --brand-main: #5e65da; */
+	/* --brand-main: #444bc6; */
 	--brand-main: #445ac6;
 	--brand-main-rgb: 68, 75, 198;
 	--brand-accent-08: rgba(var(--brand-main-rgb), 0.08);
