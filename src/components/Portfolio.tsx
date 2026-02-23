@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import "./Portfolio.css";
 import Image from "next/image";
 import projectImage1 from "../../public/portfolio/project-1.png";
@@ -32,35 +29,6 @@ const portfolioItems = [
 ];
 
 export default function Portfolio() {
-	const portfolioRef = useRef<HTMLDivElement>(null);
-	const headerRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const observerOptions = {
-			threshold: 0.1,
-			rootMargin: "0px 0px -50px 0px"
-		};
-
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("animate-in");
-				}
-			});
-		}, observerOptions);
-
-		if (portfolioRef.current) {
-			const portfolioItems = portfolioRef.current.querySelectorAll(".portfolio-item");
-			portfolioItems.forEach(item => observer.observe(item));
-		}
-
-		if (headerRef.current) {
-			observer.observe(headerRef.current);
-		}
-
-		return () => observer.disconnect();
-	}, []);
-
 	function renderPortfolioItem(item: (typeof portfolioItems)[0]) {
 		return (
 			<div className='portfolio-item card' key={item.id} data-index={item.id}>
@@ -83,9 +51,9 @@ export default function Portfolio() {
 	}
 
 	return (
-		<section id='portfolio' className='portfolio' ref={portfolioRef}>
+		<section id='portfolio' className='portfolio'>
 			<div className='container'>
-				<div className='section-header' ref={headerRef}>
+				<div className='section-header animate-in'>
 					<h2>Naš rad</h2>
 					<p>Pogledajte neke od projekata koje smo realizovali</p>
 				</div>

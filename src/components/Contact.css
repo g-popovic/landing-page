@@ -71,3 +71,84 @@
 	color: rgba(255, 255, 255, 0.7);
 	margin: 0;
 }
+
+.contact-cta {
+	position: relative;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: linear-gradient(120deg, #445ac6 0%, #4d6edf 52%, #3b82f6 100%);
+	background-size: 170% 170%;
+	box-shadow:
+		0 14px 36px rgba(68, 90, 198, 0.36),
+		inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	animation: contact-cta-gradient 9s ease-in-out infinite;
+}
+
+.contact-cta.btn::before {
+	top: -40%;
+	left: -140%;
+	width: 38%;
+	height: 180%;
+	background: linear-gradient(
+		100deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.15) 35%,
+		rgba(255, 255, 255, 0.8) 50%,
+		rgba(255, 255, 255, 0.22) 65%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	filter: blur(1px);
+	transform: rotate(20deg);
+	transition: none;
+	animation: contact-cta-shine 4.8s cubic-bezier(0.44, 0.05, 0.56, 0.95) infinite;
+}
+
+.contact-cta:hover {
+	transform: translateY(-3px) scale(1.01);
+	box-shadow:
+		0 18px 46px rgba(68, 90, 198, 0.42),
+		inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.contact-cta.btn:hover::before {
+	left: -140%;
+}
+
+@keyframes contact-cta-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes contact-cta-shine {
+	0%,
+	68% {
+		left: -140%;
+		opacity: 0;
+	}
+	74% {
+		opacity: 1;
+	}
+	90%,
+	100% {
+		left: 180%;
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.contact-cta {
+		animation: none;
+	}
+
+	.contact-cta.btn::before {
+		animation: none;
+		left: 100%;
+		opacity: 0;
+	}
+}

@@ -38,7 +38,7 @@ export default function Contact() {
 						</div>
 					</div>
 
-					<a className='btn btn-primary' href='tel:+38269397895'>
+					<a className='btn btn-primary contact-cta' href='tel:+38269397895'>
 						Kontaktiraj
 					</a>
 				</div>

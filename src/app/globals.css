@@ -279,6 +279,13 @@ h2 {
 }
 
 .animate-in {
+	opacity: 0;
+	transform: translateY(max(30%, 100px));
+	filter: blur(8px);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-in.show {
 	opacity: 1;
 	transform: translateY(0);
 	filter: blur(0);

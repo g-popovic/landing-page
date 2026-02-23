@@ -34,16 +34,6 @@
 	align-items: stretch;
 	width: 100%;
 	padding: 0 0.25rem;
-	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-	opacity: 0;
-	transform: translateY(100px);
-	filter: blur(8px);
-
-	&.animate-in {
-		opacity: 1;
-		transform: translateY(0);
-		filter: blur(0);
-	}
 }
 
 .service-timeline-item:not(:first-child)::after {
@@ -116,19 +106,6 @@
 
 .service-features li:last-child {
 	margin-bottom: 0;
-}
-
-.section-header {
-	transform: translateY(150px);
-	opacity: 0;
-	transition: 0.8s ease-out;
-	filter: blur(8px);
-
-	&.animate-in {
-		transform: translateY(0);
-		opacity: 1;
-		filter: blur(0);
-	}
 }
 
 @media (max-width: 1024px) {

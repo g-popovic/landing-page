@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import "./Services.css";
 
 const services = [
@@ -51,38 +48,9 @@ const services = [
 ];
 
 export default function Services() {
-	const servicesRef = useRef<HTMLDivElement>(null);
-	const headerRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const observerOptions = {
-			threshold: 0.2,
-			rootMargin: "0px 0px -60px 0px"
-		};
-
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("animate-in");
-				}
-			});
-		}, observerOptions);
-
-		if (servicesRef.current) {
-			const serviceCards = servicesRef.current.querySelectorAll(".service-timeline-item");
-			serviceCards.forEach(card => observer.observe(card));
-		}
-
-		if (headerRef.current) {
-			observer.observe(headerRef.current);
-		}
-
-		return () => observer.disconnect();
-	}, []);
-
-	function renderServiceCard(service: (typeof services)[0], index: number) {
+	function renderServiceCard(service: (typeof services)[0]) {
 		return (
-			<div className='service-timeline-item ' key={service.id} data-index={index}>
+			<div className='service-timeline-item animate-in' key={service.id}>
 				<article className='card highlighted service-card'>
 					<h3>{service.title}</h3>
 					<p>{service.description}</p>
@@ -97,9 +65,9 @@ export default function Services() {
 	}
 
 	return (
-		<section id='services' className='services' ref={servicesRef}>
+		<section id='services' className='services'>
 			<div className='container'>
-				<div className='section-header' ref={headerRef}>
+				<div className='section-header animate-in'>
 					<h2>Usluge - Proces izrade u 4 koraka</h2>
 					<p>
 						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran na
