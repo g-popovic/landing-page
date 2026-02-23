@@ -2,7 +2,6 @@
 
 import "./Contact.css";
 // import "./border.css";
-import Image from "next/image";
 // import icon from "../../public/icons/icon-dark-1.svg";
 import icon from "../../public/icons/icon-2.svg";
 
