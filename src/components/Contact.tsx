@@ -40,13 +40,13 @@ export default function Contact() {
 						{contactInfo.map(item => (
 							<div className='contact-item' key={item.title}>
 								<div className='contact-item-header'>
-									<Image
+									{/* <Image
 										src={item.icon}
 										alt={item.title}
 										width={38}
 										height={38}
 										// style={{ opacity: 0.8 }}
-									/>
+									/> */}
 									<h3>{item.title}</h3>
 								</div>
 								<p>
