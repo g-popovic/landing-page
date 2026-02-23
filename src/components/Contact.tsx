@@ -3,7 +3,26 @@
 import "./Contact.css";
 // import "./border.css";
 import Image from "next/image";
-import icon from "../../public/icons/icon-phone.svg";
+// import icon from "../../public/icons/icon-dark-1.svg";
+import icon from "../../public/icons/icon-2.svg";
+
+const contactInfo = [
+	{
+		icon: icon,
+		title: "Email",
+		description: "georgepopovich14@\ngmail.com"
+	},
+	{
+		icon: icon,
+		title: "Telefon",
+		description: "+382 69 397 895\n(Viber / WhatsApp)"
+	},
+	{
+		icon: icon,
+		title: "Lokacija",
+		description: "Podgorica - Budva\n Crna Gora"
+	}
+];
 
 export default function Contact() {
 	return (
@@ -18,27 +37,30 @@ export default function Contact() {
 						</p>
 					</div>
 					<div className='contact-list card highlighted animate-in'>
-						<div className='contact-item'>
-							<Image src={icon} alt='Contact Icon' width={48} height={48} />
-							<div>
-								<h4>Lokacija</h4>
-								<p>Podgorica Budva, Crna Gora</p>
+						{contactInfo.map(item => (
+							<div className='contact-item' key={item.title}>
+								<div className='contact-item-header'>
+									<Image
+										src={item.icon}
+										alt={item.title}
+										width={38}
+										height={38}
+										// style={{ opacity: 0.8 }}
+									/>
+									<h3>{item.title}</h3>
+								</div>
+								<p>
+									{item.description.split("\n").map((line, index) => (
+										<span key={index}>
+											{line}
+											{index < item.description.split("\n").length - 1 && (
+												<br />
+											)}
+										</span>
+									))}
+								</p>
 							</div>
-						</div>
-						<div className='contact-item'>
-							<Image src={icon} alt='Contact Icon' width={48} height={48} />
-							<div>
-								<h4>Email</h4>
-								<p>hello@quarkdigital.me</p>
-							</div>
-						</div>
-						<div className='contact-item'>
-							<Image src={icon} alt='Contact Icon' width={48} height={48} />
-							<div>
-								<h4>Telefon</h4>
-								<p>+382 69 123 456</p>
-							</div>
-						</div>
+						))}
 					</div>
 
 					<div className='contact-cta-container animate-in'>
