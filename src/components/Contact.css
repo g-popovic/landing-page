@@ -2,7 +2,8 @@
 .contact {
 	padding: 20rem 0 0;
 	text-align: center;
-	width: 60rem;
+	width: 100vw;
+	max-width: 100vw;
 
 	&::after {
 		content: "";
@@ -35,11 +36,11 @@
 }
 
 .contact-list {
-	width: 100%;
+	width: 60rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
-	margin: 5rem auto 6rem;
+	margin: 5rem auto 12rem;
 }
 
 .contact-item {
@@ -72,83 +73,81 @@
 	margin: 0;
 }
 
-.contact-cta {
+.contact-cta-container {
 	position: relative;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	background: linear-gradient(120deg, #445ac6 0%, #4d6edf 52%, #3b82f6 100%);
-	background-size: 170% 170%;
-	box-shadow:
-		0 14px 36px rgba(68, 90, 198, 0.36),
-		inset 0 1px 0 rgba(255, 255, 255, 0.25);
-	animation: contact-cta-gradient 9s ease-in-out infinite;
+	width: fit-content;
+	margin: 0 auto;
 }
 
-.contact-cta.btn::before {
-	top: -40%;
-	left: -140%;
-	width: 38%;
-	height: 180%;
-	background: linear-gradient(
-		100deg,
-		rgba(255, 255, 255, 0) 0%,
-		rgba(255, 255, 255, 0.15) 35%,
-		rgba(255, 255, 255, 0.8) 50%,
-		rgba(255, 255, 255, 0.22) 65%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	filter: blur(1px);
-	transform: rotate(20deg);
-	transition: none;
-	animation: contact-cta-shine 4.8s cubic-bezier(0.44, 0.05, 0.56, 0.95) infinite;
+.contact-cta {
+	position: relative;
+	isolation: isolate;
+	background: linear-gradient(135deg, var(--brand-main) 0%, #3b82f6 100%);
+	box-shadow:
+		0 12px 34px rgba(68, 90, 198, 0.36),
+		inset 0 0 0 rgba(255, 255, 255, 0.22);
+	font-size: 1.25rem;
+	color: white;
+	border: none;
+	border: 2px solid rgb(109, 162, 255);
+	outline: none;
+}
+
+.contact-cta-container::after {
+	content: "";
+	position: absolute;
+	inset: -4rem;
+	border-radius: 100%;
+	pointer-events: none;
+	z-index: -1;
+	background:
+		radial-gradient(
+			circle at 35% 52%,
+			rgba(147, 175, 255, 0.66) 0%,
+			rgba(147, 175, 255, 0) 40%
+		),
+		radial-gradient(circle at 65% 52%, rgba(84, 125, 255, 0.58) 0%, rgba(84, 125, 255, 0) 40%);
+	filter: blur(20px);
+	opacity: 0.5;
+	transform: translate3d(0, 0, 0) scale(1);
+	animation: contact-cta-aura 5s cubic-bezier(0.2, 0, 0.7, 1) alternate infinite;
+}
+
+.contact-cta-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(45deg, #ff595e, #ffca3a, #8ac926, #1982c4, #6a4c93, #ff6700);
+	background: linear-gradient(45deg, var(--brand-main), #acc8ff, var(--blue));
+	background-size: 400%;
+	z-index: -1;
+	animation: glow 10s linear infinite;
+	width: 100%;
+	border-radius: var(--border-radius);
+	filter: blur(25px);
+	opacity: 0.7;
 }
 
 .contact-cta:hover {
-	transform: translateY(-3px) scale(1.01);
-	box-shadow:
-		0 18px 46px rgba(68, 90, 198, 0.42),
-		inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	transform: scale(1.05);
 }
 
-.contact-cta.btn:hover::before {
-	left: -140%;
-}
-
-@keyframes contact-cta-gradient {
+@keyframes contact-cta-aura {
 	0% {
-		background-position: 0% 50%;
+		transform: scale(1.5);
+		opacity: 0.5;
 	}
 	50% {
-		background-position: 100% 50%;
+		transform: scale(2.5);
+		opacity: 0.4;
 	}
 	100% {
-		background-position: 0% 50%;
+		transform: scale(1.5);
+		opacity: 0.5;
 	}
 }
 
-@keyframes contact-cta-shine {
-	0%,
-	68% {
-		left: -140%;
-		opacity: 0;
-	}
-	74% {
-		opacity: 1;
-	}
-	90%,
-	100% {
-		left: 180%;
-		opacity: 0;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.contact-cta {
-		animation: none;
-	}
-
-	.contact-cta.btn::before {
-		animation: none;
-		left: 100%;
-		opacity: 0;
-	}
-}
+/* CRAZY SHIT */

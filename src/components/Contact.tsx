@@ -1,6 +1,7 @@
 "use client";
 
 import "./Contact.css";
+// import "./border.css";
 import Image from "next/image";
 import icon from "../../public/icons/icon-phone.svg";
 
@@ -38,9 +39,11 @@ export default function Contact() {
 						</div>
 					</div>
 
-					<a className='btn btn-primary contact-cta' href='tel:+38269397895'>
-						Kontaktiraj
-					</a>
+					<div className='contact-cta-container'>
+						<a className='btn contact-cta' href='tel:+38269397895'>
+							Kontaktiraj
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
