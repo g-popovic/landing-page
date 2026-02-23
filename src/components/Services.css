@@ -9,6 +9,8 @@
 		left: 0;
 		width: 100vw;
 		height: 12rem;
+		z-index: 10;
+		position: relative;
 		background: linear-gradient(to bottom, rgb(3, 3, 3) 10%, rgba(3, 3, 3, 0) 100%);
 	}
 
@@ -32,7 +34,7 @@
 	align-items: stretch;
 	width: 100%;
 	padding: 0 0.25rem;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 0;
 	transform: translateY(100px);
 	filter: blur(8px);
@@ -119,7 +121,7 @@
 .section-header {
 	transform: translateY(150px);
 	opacity: 0;
-	transition: 0.5s ease-out;
+	transition: 0.8s ease-out;
 	filter: blur(8px);
 
 	&.animate-in {

@@ -13,9 +13,10 @@ html {
 	--brand-accent-30: rgba(var(--brand-main-rgb), 0.3);
 	--brand-accent-40: rgba(var(--brand-main-rgb), 0.4);
 	--brand-accent-50: rgba(var(--brand-main-rgb), 0.5);
-	--blue-accent: rgba(68, 109, 198, 0.13);
+	--blue: rgba(68, 109, 198);
 	--border-neutral: rgba(255, 255, 255, 0.1);
 	--border-radius: 24px;
+	--gradient-2-movement-multiplier: 10;
 }
 
 * {
@@ -284,9 +285,48 @@ h2 {
 }
 
 .page-container {
-	background:
-		radial-gradient(circle at 90% 27%, var(--brand-accent-08) 0%, transparent 20%),
-		radial-gradient(circle at 10% 70%, var(--brand-accent-10) 0%, transparent 30%),
-		/* radial-gradient(circle at 15% 78%, var(--brand-accent-08) 0%, transparent 20%), */
-		radial-gradient(circle at 99% 80%, var(--blue-accent) 0%, transparent 10%);
+	position: relative;
+	overflow-x: hidden;
+}
+
+.bottom-gradient {
+	position: fixed;
+	bottom: -15rem;
+	left: 20%;
+	width: 4px;
+	height: 4px;
+	border-radius: 4px;
+	box-shadow: 0 0 100rem 30rem var(--brand-main);
+	opacity: 0.13;
+}
+
+.gradient-1,
+.gradient-2 {
+	position: absolute;
+	aspect-ratio: 1;
+	transform: translate(-50%, -50%);
+}
+
+.gradient-1 {
+	background: radial-gradient(circle, var(--brand-accent-08) 0%, transparent 70%);
+	top: 27%;
+	left: 90%;
+	width: 70rem;
+}
+
+.gradient-2 {
+	background: radial-gradient(circle, var(--blue) 0%, transparent 70%);
+	top: 79%;
+	left: 90%;
+	opacity: 0.13;
+	width: 130rem;
+}
+
+@keyframes gradient-breathe {
+	0% {
+		width: 70rem;
+	}
+	100% {
+		width: 150rem;
+	}
 }

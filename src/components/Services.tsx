@@ -56,8 +56,8 @@ export default function Services() {
 
 	useEffect(() => {
 		const observerOptions = {
-			threshold: 0.3,
-			rootMargin: "0px 0px -50px 0px"
+			threshold: 0.2,
+			rootMargin: "0px 0px -60px 0px"
 		};
 
 		const observer = new IntersectionObserver(entries => {

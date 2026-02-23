@@ -14,7 +14,7 @@ export default function Contact() {
 						Imate pitanja? Spreman sam da pomognem Vama i Vasem projektu na najbolji
 						mogući način. Pošaljite mi poruku ili pozovite direktno.
 					</p>
-					<div className='contact-list card'>
+					<div className='contact-list card highlighted'>
 						<div className='contact-item'>
 							<Image src={icon} alt='Contact Icon' width={48} height={48} />
 							<div>
