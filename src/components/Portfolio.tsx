@@ -31,7 +31,7 @@ const portfolioItems = [
 export default function Portfolio() {
 	function renderPortfolioItem(item: (typeof portfolioItems)[0]) {
 		return (
-			<div className='portfolio-item card' key={item.id} data-index={item.id}>
+			<div className='portfolio-item card animate-in' key={item.id} data-index={item.id}>
 				<div className='portfolio-content'>
 					<h3>{item.title}</h3>
 					<p>{item.description}</p>

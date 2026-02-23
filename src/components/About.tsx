@@ -6,7 +6,7 @@ import aboutImage from "../../public/avatar.jpg";
 
 export default function About() {
 	return (
-		<section id='about' className='about container animate-in'>
+		<section id='about' className='about container'>
 			<div className='about-content'>
 				<div className='about-text '>
 					<div className='img-container'>

@@ -10,12 +10,14 @@ export default function Contact() {
 		<section id='contact' className='contact container'>
 			<div className='contact-content'>
 				<div className='contact-info'>
-					<h2>Kontakt</h2>
-					<p>
-						Imate pitanja? Spreman sam da pomognem Vama i Vasem projektu na najbolji
-						mogući način. Pošaljite mi poruku ili pozovite direktno.
-					</p>
-					<div className='contact-list card highlighted'>
+					<div className='animate-in'>
+						<h2>Kontakt</h2>
+						<p>
+							Imate pitanja? Spreman sam da pomognem Vama i Vasem projektu na najbolji
+							mogući način. Pošaljite mi poruku ili pozovite direktno.
+						</p>
+					</div>
+					<div className='contact-list card highlighted animate-in'>
 						<div className='contact-item'>
 							<Image src={icon} alt='Contact Icon' width={48} height={48} />
 							<div>
@@ -39,7 +41,8 @@ export default function Contact() {
 						</div>
 					</div>
 
-					<div className='contact-cta-container'>
+					<div className='contact-cta-container animate-in'>
+						<div className='contact-cta-background-gradient' />
 						<a className='btn contact-cta' href='tel:+38269397895'>
 							Kontaktiraj
 						</a>

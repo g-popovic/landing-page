@@ -89,11 +89,11 @@
 	font-size: 1.25rem;
 	color: white;
 	border: none;
-	border: 2px solid rgb(109, 162, 255);
 	outline: none;
+	margin-bottom: -0.5rem;
 }
 
-.contact-cta-container::after {
+.contact-cta-background-gradient {
 	content: "";
 	position: absolute;
 	inset: -4rem;
@@ -113,22 +113,33 @@
 	animation: contact-cta-aura 5s cubic-bezier(0.2, 0, 0.7, 1) alternate infinite;
 }
 
+.contact-cta-container::after,
 .contact-cta-container::before {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(45deg, #ff595e, #ffca3a, #8ac926, #1982c4, #6a4c93, #ff6700);
-	background: linear-gradient(45deg, var(--brand-main), #acc8ff, var(--blue));
+	inset: -3px;
+	background: linear-gradient(
+		45deg,
+		transparent,
+		transparent,
+		transparent,
+		var(--baby-blue),
+		var(--baby-blue),
+		transparent,
+		transparent,
+		transparent
+	);
 	background-size: 400%;
 	z-index: -1;
-	animation: glow 10s linear infinite;
-	width: 100%;
-	border-radius: var(--border-radius);
-	filter: blur(25px);
-	opacity: 0.7;
+	animation: glow 4s linear infinite;
+	border-radius: 5rem;
+
+	opacity: 0.6;
+}
+
+.contact-cta-container::before {
+	inset: -8px;
+	filter: blur(8px);
 }
 
 .contact-cta:hover {
@@ -150,4 +161,14 @@
 	}
 }
 
-/* CRAZY SHIT */
+@keyframes glow {
+	0% {
+		background-position: 0 0;
+	}
+	70% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}
