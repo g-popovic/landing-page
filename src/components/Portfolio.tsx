@@ -3,9 +3,9 @@ import Image, { StaticImageData } from "next/image";
 import reliveImage from "../../public/portfolio/relive.jpg";
 import cameaImage from "../../public/portfolio/camea.jpg";
 import etherImage from "../../public/portfolio/ether.jpg";
-import projectImage1 from "../../public/portfolio/project-1.png";
-import projectImage2 from "../../public/portfolio/project-2.png";
-import projectImage3 from "../../public/portfolio/project-3.png";
+import cabloImage from "../../public/portfolio/cablo.jpg";
+import mneLuxImage from "../../public/portfolio/mne-lux.jpg";
+import bionizeImage from "../../public/portfolio/bionize.jpg";
 import PersonalProjects from "./PersonalProjects";
 
 const currentYear = new Date().getFullYear();
@@ -47,28 +47,28 @@ const workExperience: ProjectItem[] = [
 
 const sideProjects: ProjectItem[] = [
 	{
-		id: 1,
+		id: 4,
 		title: "Cablo",
 		date: `2024 - ${currentYear}`,
 		description:
 			"Cablo je platforma za digitalizaciju licnog prevoza i taxi servisa u Crnoj Gori, nalik Uber-a. Dozvoljava korisnicima da zakažu vožnju putem aplikacije u bilo koje vrijeme širom teritorije Crne Gore. Zajedno sa dvoje programera, razvili smo čitav sistem (aplikaciju, sajt, i server) od nule.",
-		image: projectImage1
+		image: cabloImage
 	},
 	{
-		id: 2,
+		id: 5,
 		title: "Montenegro Luxury Association",
 		date: "2022 - 2023",
 		description:
 			"Za Montenegro Luxury Association razvio sam digitalnu platformu koja bolje predstavlja premium turističku ponudu i olakšava online prisustvo organizacije. Projekat je postavljen od nule, od koncepta do ključnih funkcionalnosti, sa fokusom na stabilan rast.",
-		image: projectImage2
+		image: mneLuxImage
 	},
 	{
-		id: 3,
+		id: 6,
 		title: "Bionize",
 		date: "Jun - Oct 2022",
 		description:
 			"Bionize je browser dodatak koji automatski prilagođava tekst na web stranicama kako bi sadržaj bio lakši i brži za čitanje. Proizvod je prešao 3000+ preuzimanja i pokazao koliko dobro osmišljen UX detalj može odmah povećati upotrebljivost.",
-		image: projectImage3
+		image: bionizeImage
 	}
 ];
 
