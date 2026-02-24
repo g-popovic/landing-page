@@ -68,8 +68,8 @@
 	opacity: 0.7;
 	width: 550px;
 	height: 550px;
-	max-width: 80vw;
-	max-height: 80vw;
+	max-width: 90vw;
+	max-height: 90vw;
 	animation: rotateClockwise 12s linear infinite;
 }
 
@@ -227,19 +227,26 @@
 		font-size: 2.5rem;
 	}
 
-	.hero-buttons {
-		justify-content: center;
-	}
-}
-
-@media (max-width: 480px) {
-	.hero-title {
-		font-size: 2rem;
+	.hero-subtitle {
+		width: 280px;
+		margin: 0 auto 3.5rem;
+		text-align: justify;
 	}
 
 	.hero-buttons {
 		flex-direction: column;
 		align-items: center;
+
+		.btn {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-title {
+		font-size: 2.3rem;
+		white-space: nowrap;
 	}
 
 	.hero-rings::before {

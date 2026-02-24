@@ -214,6 +214,11 @@ h2 {
 	}
 }
 
+a {
+	color: white;
+	text-decoration: none;
+}
+
 .card {
 	--service-border-size: 2px;
 
@@ -379,5 +384,17 @@ h2 {
 		left: 105%;
 		opacity: 0.2;
 		height: 430rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.hide-mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.hide-desktop {
+		display: none;
 	}
 }

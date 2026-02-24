@@ -7,6 +7,7 @@ import cabloImage from "../../public/portfolio/cablo.jpg";
 import mneLuxImage from "../../public/portfolio/mne-lux.jpg";
 import bionizeImage from "../../public/portfolio/bionize.jpg";
 import PersonalProjects from "./PersonalProjects";
+import linkIcon from "../../public/icons/link-3.svg";
 
 const currentYear = new Date().getFullYear();
 
@@ -16,6 +17,7 @@ type ProjectItem = {
 	date: string;
 	description: string;
 	image: StaticImageData;
+	link?: string;
 };
 
 const workExperience: ProjectItem[] = [
@@ -25,7 +27,8 @@ const workExperience: ProjectItem[] = [
 		date: "2021 - 2026",
 		description:
 			"Relive je globalna platforma za praćenje aktivnosti poput trčanja, biciklizma i planinarenja, sa mobilnom aplikacijom i web iskustvom, koju koriste preko 20 miliona korisnika. Radio sam na ključnim dijelovima proizvoda koji utiču na svakodnevno iskustvo korisnika, uz redovne isporuke i mjerljivo smanjenje operativnih troškova za oko 3000 EUR mjesečno.",
-		image: reliveImage
+		image: reliveImage,
+		link: "https://relive.com"
 	},
 	{
 		id: 2,
@@ -75,21 +78,35 @@ const sideProjects: ProjectItem[] = [
 export default function Portfolio() {
 	function renderPortfolioItem(item: ProjectItem) {
 		return (
-			<div className='animate-in' key={item.id} data-index={item.id}>
+			<a
+				href={item.link}
+				target='_blank'
+				className='animate-in'
+				key={item.id}
+				data-index={item.id}>
 				<div className='portfolio-item card'>
 					<div className='portfolio-content'>
-						<div className='portfolio-content-header'>
-							<h3>{item.title}</h3>
-							<p>{item.date}</p>
+						<div>
+							<div className='portfolio-content-header'>
+								<h3>{item.title}</h3>
+								<p>{item.date}</p>
+							</div>
+
+							<p>{item.description}</p>
 						</div>
 
-						<p>{item.description}</p>
+						{item.link && (
+							<div className='portfolio-item-link'>
+								<Image src={linkIcon} alt='Sajt' width={20} height={20} />
+								<p className='link-text'>Posjeti Sajt</p>
+							</div>
+						)}
 					</div>
 					<div className='portfolio-image'>
 						<Image src={item.image} alt={item.title} width={800} height={800} />
 					</div>
 				</div>
-			</div>
+			</a>
 		);
 	}
 

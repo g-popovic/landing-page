@@ -1,27 +1,43 @@
 "use client";
 
 import "./Contact.css";
-import icon from "../../public/icons/icon-2.svg";
 
 const contactInfo = [
 	{
-		icon: icon,
 		title: "✉️ Email",
 		description: "georgepopovich14@\ngmail.com"
 	},
 	{
-		icon: icon,
 		title: "📞 Telefon",
 		description: "+382 69 397 895\n(Viber / WhatsApp)"
 	},
 	{
-		icon: icon,
 		title: "🌍 Lokacija",
 		description: "Podgorica - Budva\n Crna Gora"
 	}
 ];
 
 export default function Contact() {
+	function renderContactItem(item: (typeof contactInfo)[0]) {
+		const splitDescription = item.description.split("\n");
+
+		return (
+			<div className='contact-item' key={item.title}>
+				<div className='contact-item-header'>
+					<h3>{item.title}</h3>
+				</div>
+				<p>
+					{splitDescription.map((line, index) => (
+						<span key={index}>
+							{line}
+							{index < splitDescription.length - 1 && <br />}
+						</span>
+					))}
+				</p>
+			</div>
+		);
+	}
+
 	return (
 		<section id='contact' className='contact container'>
 			<div className='contact-content'>
@@ -38,24 +54,7 @@ export default function Contact() {
 					</div>
 					<div className='animate-in'>
 						<div className='contact-list card highlighted '>
-							{contactInfo.map(item => (
-								<div className='contact-item' key={item.title}>
-									<div className='contact-item-header'>
-										<h3>{item.title}</h3>
-									</div>
-									<p>
-										{item.description.split("\n").map((line, index) => (
-											<span key={index}>
-												{line}
-												{index <
-													item.description.split("\n").length - 1 && (
-													<br />
-												)}
-											</span>
-										))}
-									</p>
-								</div>
-							))}
+							{contactInfo.map(renderContactItem)}
 						</div>
 
 						<div className='contact-cta-container '>

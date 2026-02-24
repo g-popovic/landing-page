@@ -187,11 +187,14 @@ export default function Hero() {
 						{subtitle}
 					</p>
 					<div className='hero-buttons'>
-						<Link href='#contact' className='btn btn-primary'>
-							Započni projekt
+						<Link href='#services' className='btn btn-secondary hide-desktop'>
+							Istraži Dalje
 						</Link>
-						<Link href='#services' className='btn btn-secondary'>
-							Naše usluge
+						<Link href='#contact' className='btn btn-primary hide-mobile'>
+							Kontakt
+						</Link>
+						<Link href='#services' className='btn btn-secondary hide-mobile'>
+							Usluge
 						</Link>
 					</div>
 				</div>

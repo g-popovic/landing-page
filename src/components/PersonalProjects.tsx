@@ -52,12 +52,14 @@ export default function PersonalProjects() {
 		return (
 			<div className='portfolio-learning-card card' key={item.id} data-index={item.id}>
 				<div className='portfolio-content'>
-					<div className='portfolio-content-header'>
-						<h3>{item.title}</h3>
-						<p className='date'>{item.date}</p>
-					</div>
+					<div>
+						<div className='portfolio-content-header'>
+							<h3>{item.title}</h3>
+							<p className='date'>{item.date}</p>
+						</div>
 
-					<p>{item.description}</p>
+						<p>{item.description}</p>
+					</div>
 				</div>
 			</div>
 		);

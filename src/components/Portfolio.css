@@ -71,6 +71,24 @@
 
 .portfolio-content {
 	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.portfolio-item-link {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		opacity: 0.7;
+
+		img {
+			filter: brightness(0) invert(1);
+		}
+
+		.link-text {
+			text-decoration: dotted underline;
+		}
+	}
 }
 
 .portfolio-content h3 {
