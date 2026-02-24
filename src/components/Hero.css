@@ -54,27 +54,18 @@
 	}
 }
 
-.hero-ring-1,
-.hero-ring-2 {
+.hero-ring-1 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	filter: blur(10px);
 	opacity: 0.7;
-}
-
-.hero-ring-1 {
 	width: 550px;
 	height: 550px;
+	max-width: 80vw;
+	max-height: 80vw;
 	animation: rotateClockwise 12s linear infinite;
-}
-
-.hero-ring-2 {
-	width: 0;
-	height: 0;
-	animation: rotateCounterClockwise 18s linear infinite;
-	/* opacity: 0.4; */
 }
 
 .hero::before {
@@ -248,5 +239,10 @@
 	.hero-buttons {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.hero-rings::before {
+		width: 110vw;
+		height: 110vw;
 	}
 }

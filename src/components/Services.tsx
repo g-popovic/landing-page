@@ -52,8 +52,11 @@ export default function Services() {
 		return (
 			<div className='service-timeline-item animate-in' key={service.id}>
 				<article className='card highlighted service-card'>
-					<h3>{service.title}</h3>
-					<p>{service.description}</p>
+					<div className='service-header'>
+						<h3 className='service-name'>{service.title}</h3>
+						<h3 className='service-number'>{service.id}</h3>
+					</div>
+					<p className='service-description'>{service.description}</p>
 					<ul className='service-features'>
 						{service.features.map(feature => (
 							<li key={feature}>{feature}</li>
@@ -68,7 +71,7 @@ export default function Services() {
 		<section id='services' className='services'>
 			<div className='container'>
 				<div className='section-header animate-in'>
-					<h2>Usluge - Proces izrade u 4 koraka</h2>
+					<h2>Usluge</h2>
 					<p>
 						Od ideje do lansiranja, vodimo vas kroz jasan proces koji je fokusiran na
 						rezultate i nove klijente.

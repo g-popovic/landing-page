@@ -55,14 +55,6 @@
 	justify-content: flex-end;
 }
 
-.service-timeline-item:nth-child(odd) .service-card {
-	margin-right: auto;
-}
-
-.service-timeline-item:nth-child(even) .service-card {
-	margin-left: auto;
-}
-
 .service-card {
 	width: min(66%, 600px);
 	position: relative;
@@ -70,14 +62,31 @@
 	flex-direction: column;
 }
 
-.service-card h3 {
+.service-header {
+	display: flex;
+	align-items: center;
+	/* justify-content: space-between; */
+	margin-bottom: 1rem;
+	gap: 2rem;
+}
+
+.service-name {
 	font-size: 1.5rem;
 	font-weight: 600;
 	color: #ffffff;
-	margin-bottom: 1rem;
 }
 
-.service-card p {
+.service-number {
+	color: var(--brand-main);
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+
+.service-header .separator {
+	opacity: 0.6;
+}
+
+.service-description {
 	color: rgba(255, 255, 255, 0.7);
 	margin-bottom: 1.5rem;
 	line-height: 1.6;
@@ -97,7 +106,7 @@
 }
 
 .service-features li::before {
-	content: "✓";
+	content: "●";
 	position: absolute;
 	left: 0;
 	color: var(--brand-main);
@@ -108,33 +117,12 @@
 	margin-bottom: 0;
 }
 
-@media (max-width: 1024px) {
-	.service-card {
-		width: min(74%, 680px);
-		min-width: 0;
-	}
-}
-
 @media (max-width: 768px) {
-	.services-timeline {
-		gap: 1.5rem;
-	}
-
 	.service-timeline-item {
-		padding-left: 2rem;
-		padding-right: 0;
-	}
+		justify-content: center !important;
 
-	.service-timeline-item .service-card {
-		width: 100%;
-		max-width: none;
-		min-width: 0;
-		margin: 0;
-	}
-
-	.service-timeline-item:not(:last-child)::after {
-		left: 1rem;
-		top: 2rem;
-		height: calc(100% + 1.5rem - 2rem);
+		.service-card {
+			width: 100%;
+		}
 	}
 }

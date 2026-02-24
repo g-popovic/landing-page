@@ -6,7 +6,6 @@ import Link from "next/link";
 import "./Hero.css";
 
 const HERO_RING_1_WIDTH = 500;
-const HERO_RING_2_WIDTH = 250;
 
 export default function Hero() {
 	const heroStarsRef = useRef<HTMLDivElement>(null);
@@ -169,13 +168,6 @@ export default function Hero() {
 
 			{/* Hero Background Rings */}
 			<div className='hero-rings'>
-				<Image
-					src='/hero-ring.png'
-					alt=''
-					className='hero-ring-2'
-					width={HERO_RING_2_WIDTH}
-					height={HERO_RING_2_WIDTH}
-				/>
 				<Image
 					src='/hero-ring.png'
 					alt=''

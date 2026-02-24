@@ -1,24 +1,22 @@
 "use client";
 
 import "./Contact.css";
-// import "./border.css";
-// import icon from "../../public/icons/icon-dark-1.svg";
 import icon from "../../public/icons/icon-2.svg";
 
 const contactInfo = [
 	{
 		icon: icon,
-		title: "Email",
+		title: "✉️ Email",
 		description: "georgepopovich14@\ngmail.com"
 	},
 	{
 		icon: icon,
-		title: "Telefon",
+		title: "📞 Telefon",
 		description: "+382 69 397 895\n(Viber / WhatsApp)"
 	},
 	{
 		icon: icon,
-		title: "Lokacija",
+		title: "🌍 Lokacija",
 		description: "Podgorica - Budva\n Crna Gora"
 	}
 ];

@@ -25,6 +25,13 @@ const portfolioItems = [
 		description: "Cross-platform mobilna aplikacija za food delivery sa real-time tracking.",
 		tags: ["React Native", "Firebase", "Maps API"],
 		image: projectImage3
+	},
+	{
+		id: 4,
+		title: "Corporate Website",
+		description: "Moderna korporativna web stranica sa CMS sistemom i multi-language podrškom.",
+		tags: ["React", "Next.js", "Strapi"],
+		image: projectImage1
 	}
 ];
 
