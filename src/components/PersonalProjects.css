@@ -1,0 +1,23 @@
+.portfolio-carousel-block {
+	width: 80rem;
+	max-width: 80vw;
+	margin: 0 auto;
+	margin-bottom: 18rem;
+}
+
+.portfolio-learning-card {
+	display: block;
+	min-height: 15.5rem;
+}
+
+.portfolio-learning-card .portfolio-content {
+	height: 100%;
+	padding: 0;
+}
+
+@media (max-width: 768px) {
+	.portfolio-carousel-block {
+		margin-bottom: 16rem;
+		max-width: 100vw;
+	}
+}

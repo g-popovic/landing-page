@@ -1,0 +1,139 @@
+.carousel {
+	width: 100%;
+	position: relative;
+	outline: none;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 12rem;
+		height: 100%;
+		background: linear-gradient(to right, #0a0a0a 20%, transparent 100%);
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	&::before {
+		left: -1px;
+	}
+
+	&::after {
+		right: -1px;
+		background: linear-gradient(to left, #0a0a0a 20%, transparent 100%);
+	}
+}
+
+.carousel-viewport {
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	cursor: grab;
+	overscroll-behavior-x: contain;
+	padding: 0.35rem 0.2rem 0.8rem;
+}
+
+.carousel-viewport:active {
+	cursor: grabbing;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel-track,
+.carousel-group {
+	display: flex;
+	align-items: stretch;
+	gap: 2rem;
+	width: max-content;
+}
+
+.carousel-slide {
+	flex: 0 0 clamp(16rem, 34rem, 90vw);
+	width: clamp(16rem, 34rem, 90vw);
+}
+
+.carousel-slide > * {
+	height: 100%;
+}
+
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.8rem;
+	height: 2.8rem;
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	/* border: none; */
+	border-radius: 999px;
+	/* background: #0a0a0a; */
+	background: rgba(0, 0, 0, 0.01);
+	color: #ffffff;
+	font-size: 2rem;
+	font-weight: 100;
+	opacity: 0.7;
+	cursor: pointer;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(8px);
+	transition: 0.25s ease;
+	/* box-shadow:
+		0 0 0 1px rgba(255, 255, 255, 0.05),
+		0 12px 30px rgba(44, 60, 160, 0.4); */
+
+	span {
+		margin-top: -0.1rem;
+	}
+}
+
+.carousel-arrow:hover {
+	transform: translateY(-50%) scale(1.06);
+	background: rgba(255, 255, 255, 0.07);
+}
+
+.carousel-arrow:active {
+	transform: translateY(-50%) scale(0.98);
+}
+
+.carousel-arrow-left {
+	left: -3.45rem;
+}
+
+.carousel-arrow-right {
+	right: -3.45rem;
+}
+
+@media (max-width: 768px) {
+	.carousel {
+		&::after,
+		&::before {
+			width: 1rem;
+		}
+	}
+
+	.carousel-slide {
+		flex: 0 0 min(85vw, 24rem);
+		width: min(85vw, 24rem);
+	}
+
+	.carousel-arrow {
+		bottom: -6rem;
+		top: auto;
+	}
+
+	.carousel-arrow-left {
+		left: calc(50% - 2.5rem);
+		transform: translate(-50%, -50%);
+	}
+
+	.carousel-arrow-right {
+		right: calc(50% - 2.5rem);
+		transform: translate(50%, -50%);
+	}
+}
