@@ -199,7 +199,7 @@ h2 {
 	}
 
 	.container {
-		padding: 0 2rem;
+		padding: 0 1.5rem;
 	}
 }
 
@@ -324,7 +324,7 @@ h2 {
 .gradient-1,
 .gradient-2,
 .gradient-3,
-.gradient-4 {
+.cta-gradient {
 	position: absolute;
 	aspect-ratio: 1;
 	transform: translate(-50%, -50%);
@@ -340,13 +340,19 @@ h2 {
 	filter: blur(100px);
 }
 
-.gradient-2 {
+.gradient-2,
+.gradient-3 {
 	background: radial-gradient(100% 70%, var(--brand-main) 0%, transparent 70%);
-	top: 45%;
+	top: 31%;
 	left: -20%;
 	opacity: 0.17;
 	width: 200rem;
-	height: 210rem;
+	height: 150rem;
+}
+
+.gradient-3 {
+	top: 50%;
+	left: 120%;
 }
 
 @keyframes gradient-breathe {
@@ -359,17 +365,19 @@ h2 {
 }
 
 @media (max-width: 768px) {
-	.gradient-2 {
-		top: 42%;
+	.gradient-2,
+	.gradient-3 {
+		top: 33%;
 		left: -5%;
 		width: 190%;
-		height: 210rem;
+		height: 240rem;
 		opacity: 0.25;
 	}
 
 	.gradient-3 {
-		left: 50%;
-		top: 75%;
-		width: 100rem;
+		top: 60%;
+		left: 105%;
+		opacity: 0.2;
+		height: 430rem;
 	}
 }

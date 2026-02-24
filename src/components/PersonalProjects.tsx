@@ -67,7 +67,7 @@ export default function PersonalProjects() {
 
 	return (
 		<div>
-			<div className='section-header animate-in'>
+			<div className='section-header animate-in container'>
 				<h2>Licni Projekti</h2>
 				<p>
 					Iskustvo iz realnih proizvoda i platformi, sa fokusom na rezultate koji donose

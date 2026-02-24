@@ -42,7 +42,7 @@
 	z-index: 1;
 
 	/* black background that makes stars disappear */
-	/* &::before {
+	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -51,12 +51,15 @@
 		border-radius: 100%;
 		width: 550px;
 		height: 550px;
-		background: radial-gradient(circle 500px at center, #030303 90%, transparent 100%);
-		backdrop-filter: blur(100px);
-	} */
+		max-width: 100vw;
+		max-height: 100vw;
+		background: radial-gradient(circle at 50% 50%, #030303 60%, transparent);
+		filter: blur(20px);
+	}
 }
 
 .hero-ring-1 {
+	/* display: none; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -175,14 +178,8 @@
 	10% {
 		opacity: 1;
 	}
-	50% {
-		opacity: 1;
-	}
-	60% {
-		opacity: 0;
-	}
+
 	100% {
-		opacity: 0;
 		top: 50%;
 		left: 50%;
 	}
@@ -230,10 +227,6 @@
 		font-size: 2.5rem;
 	}
 
-	.hero-graphic {
-		height: 300px;
-	}
-
 	.hero-buttons {
 		justify-content: center;
 	}
@@ -250,7 +243,9 @@
 	}
 
 	.hero-rings::before {
-		width: 110vw;
-		height: 110vw;
+		width: 100vw;
+		height: 130vw;
+		max-height: none;
+		background: radial-gradient(circle at 50% 50%, #030303 60%, transparent);
 	}
 }

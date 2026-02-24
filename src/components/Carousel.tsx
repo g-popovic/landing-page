@@ -7,7 +7,7 @@ type CarouselProps = {
 	items: ReactElement[];
 };
 
-const AUTO_SCROLL_PX_PER_MS = 0.073;
+const AUTO_SCROLL_PX_PER_MS = 0.072;
 const ARROW_STEP = 400;
 
 export default function Carousel({ items }: CarouselProps) {

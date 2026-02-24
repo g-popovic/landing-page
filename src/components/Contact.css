@@ -148,7 +148,7 @@
 	margin: 0 auto;
 }
 
-.gradient-3 {
+.cta-gradient {
 	background: radial-gradient(70% 60%, var(--blue) 0%, transparent 70%);
 	top: 10rem;
 	left: 50%;
@@ -192,5 +192,10 @@
 
 	.contact-item-header {
 		margin-bottom: 0;
+	}
+
+	.cta-gradient {
+		top: 20rem;
+		height: 130rem;
 	}
 }

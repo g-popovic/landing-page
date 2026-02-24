@@ -34,7 +34,7 @@ export default function Contact() {
 						</p>
 					</div>
 					<div className='contact-gradient-container animate-in'>
-						<div className='gradient-3 ' />
+						<div className='cta-gradient' />
 					</div>
 					<div className='animate-in'>
 						<div className='contact-list card highlighted '>
