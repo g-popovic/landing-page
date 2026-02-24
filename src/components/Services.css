@@ -42,9 +42,15 @@
 	left: 50%;
 	top: 0%;
 	transform: translate(-50%, -100%);
-	width: 2px;
+	width: 3px;
 	height: 2.75rem;
-	background: linear-gradient(to bottom, var(--brand-accent-50) 0%, transparent 92%);
+	background: linear-gradient(
+		to bottom,
+		transparent 0%,
+		var(--brand-accent-50) 25%,
+		var(--brand-accent-50) 75%,
+		transparent 100%
+	);
 }
 
 .service-timeline-item:nth-child(odd) {

@@ -1,6 +1,22 @@
 /* Portfolio Section */
 .portfolio {
-	margin: 10rem auto 18rem;
+	margin: 10rem auto 0;
+}
+
+.portfolio-items {
+	margin-bottom: 18rem;
+
+	&.projects {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2.5rem;
+
+		.portfolio-item {
+			display: block;
+			margin-bottom: 0;
+			height: 100%;
+		}
+	}
 }
 
 .portfolio-item {
@@ -32,6 +48,21 @@
 	margin-bottom: 0.5rem;
 }
 
+.portfolio-content-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.75rem;
+
+	* {
+		margin: 0;
+	}
+
+	.date {
+		white-space: nowrap;
+	}
+}
+
 .portfolio-content {
 	padding: 2rem;
 }
@@ -40,16 +71,15 @@
 	font-size: 1.25rem;
 	font-weight: 600;
 	color: #ffffff;
-	margin-bottom: 0.5rem;
 }
 
 .portfolio-content p {
 	color: rgba(255, 255, 255, 0.7);
 	line-height: 1.6;
-	margin-bottom: 1rem;
 }
 
 .portfolio-tags {
+	margin-top: 1rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
@@ -66,7 +96,7 @@
 
 /* Mobile Portfolio */
 @media (max-width: 768px) {
-	.portfolio-grid {
+	.portfolio-items {
 		grid-template-columns: 1fr;
 	}
 
