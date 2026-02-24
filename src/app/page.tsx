@@ -16,8 +16,6 @@ export default function Home() {
 			<div className='gradient-container'>
 				<div className='gradient-1' />
 				<div className='gradient-2' />
-				<div className='gradient-3' />
-				<div className='gradient-4' />
 				<div className='bottom-gradient' />
 			</div>
 

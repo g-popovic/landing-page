@@ -26,45 +26,44 @@ export default function Contact() {
 		<section id='contact' className='contact container'>
 			<div className='contact-content'>
 				<div className='contact-info'>
-					<div className='animate-in'>
+					<div className='animate-in idk'>
 						<h2>Kontakt</h2>
 						<p>
 							Imate pitanja? Spreman sam da pomognem Vama i Vasem projektu na najbolji
 							mogući način. Pošaljite mi poruku ili pozovite direktno.
 						</p>
 					</div>
-					<div className='contact-list card highlighted animate-in'>
-						{contactInfo.map(item => (
-							<div className='contact-item' key={item.title}>
-								<div className='contact-item-header'>
-									{/* <Image
-										src={item.icon}
-										alt={item.title}
-										width={38}
-										height={38}
-										// style={{ opacity: 0.8 }}
-									/> */}
-									<h3>{item.title}</h3>
-								</div>
-								<p>
-									{item.description.split("\n").map((line, index) => (
-										<span key={index}>
-											{line}
-											{index < item.description.split("\n").length - 1 && (
-												<br />
-											)}
-										</span>
-									))}
-								</p>
-							</div>
-						))}
+					<div className='contact-gradient-container animate-in'>
+						<div className='gradient-3 ' />
 					</div>
+					<div className='animate-in'>
+						<div className='contact-list card highlighted '>
+							{contactInfo.map(item => (
+								<div className='contact-item' key={item.title}>
+									<div className='contact-item-header'>
+										<h3>{item.title}</h3>
+									</div>
+									<p>
+										{item.description.split("\n").map((line, index) => (
+											<span key={index}>
+												{line}
+												{index <
+													item.description.split("\n").length - 1 && (
+													<br />
+												)}
+											</span>
+										))}
+									</p>
+								</div>
+							))}
+						</div>
 
-					<div className='contact-cta-container animate-in'>
-						<div className='contact-cta-background-gradient' />
-						<a className='btn contact-cta' href='tel:+38269397895'>
-							Kontaktiraj
-						</a>
+						<div className='contact-cta-container '>
+							<div className='contact-cta-background-gradient' />
+							<a className='btn contact-cta' href='tel:+38269397895'>
+								Kontaktiraj
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

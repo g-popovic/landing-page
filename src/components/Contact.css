@@ -106,7 +106,7 @@
 			rgba(147, 175, 255, 0) 40%
 		),
 		radial-gradient(circle at 65% 52%, rgba(84, 125, 255, 0.58) 0%, rgba(84, 125, 255, 0) 40%);
-	filter: blur(20px);
+	filter: blur(16px);
 	transform: translate3d(0, 0, 0) scale(1);
 	animation: contact-cta-aura 5s cubic-bezier(0.2, 0, 0.7, 1) alternate infinite;
 }
@@ -143,18 +143,32 @@
 	transform: scale(1.05);
 }
 
+.contact-gradient-container {
+	position: relative;
+	margin: 0 auto;
+}
+
+.gradient-3 {
+	background: radial-gradient(70% 60%, var(--blue) 0%, transparent 70%);
+	top: 10rem;
+	left: 50%;
+	opacity: 0.25;
+	filter: blur(50px);
+	width: 110rem;
+}
+
 @keyframes contact-cta-aura {
 	0% {
-		transform: scale(1.5);
-		opacity: 0.4;
-	}
-	50% {
-		transform: scale(2.5);
+		transform: scale(1);
 		opacity: 0.3;
 	}
-	100% {
+	50% {
 		transform: scale(1.5);
-		opacity: 0.4;
+		opacity: 0.2;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.3;
 	}
 }
 
