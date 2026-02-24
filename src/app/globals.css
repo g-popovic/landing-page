@@ -2,7 +2,6 @@
 
 html {
 	scroll-behavior: smooth;
-	overflow: hidden;
 }
 
 :root {
@@ -92,7 +91,7 @@ h6 {
 /* Global Container */
 .page-container {
 	position: relative;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .container,
