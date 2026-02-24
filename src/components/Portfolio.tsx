@@ -38,20 +38,22 @@ const portfolioItems = [
 export default function Portfolio() {
 	function renderPortfolioItem(item: (typeof portfolioItems)[0]) {
 		return (
-			<div className='portfolio-item card animate-in' key={item.id} data-index={item.id}>
-				<div className='portfolio-content'>
-					<h3>{item.title}</h3>
-					<p>{item.description}</p>
-					<div className='portfolio-tags'>
-						{item.tags.map(tag => (
-							<span className='tag' key={tag}>
-								{tag}
-							</span>
-						))}
+			<div className='animate-in'>
+				<div className='portfolio-item card' key={item.id} data-index={item.id}>
+					<div className='portfolio-content'>
+						<h3>{item.title}</h3>
+						<p>{item.description}</p>
+						<div className='portfolio-tags'>
+							{item.tags.map(tag => (
+								<span className='tag' key={tag}>
+									{tag}
+								</span>
+							))}
+						</div>
 					</div>
-				</div>
-				<div className='portfolio-image'>
-					<Image src={item.image} alt={item.title} fill={true} />
+					<div className='portfolio-image'>
+						<Image src={item.image} alt={item.title} fill={true} />
+					</div>
 				</div>
 			</div>
 		);

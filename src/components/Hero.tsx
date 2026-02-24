@@ -21,8 +21,10 @@ export default function Hero() {
 		const heroStarsContainer = heroStarsRef.current;
 		if (!heroStarsContainer) return;
 
-		const starCount = 200;
-		const movementSpeed = 0.5;
+		const isMobile = window.innerWidth < 768;
+
+		const starCount = isMobile ? 50 : 200;
+		const movementSpeed = isMobile ? 0.3 : 0.5;
 
 		// Render initial stars that will be everywhere on-screen and disappear when they reach the center
 		for (let i = 0; i < starCount * 0.5; i++) {

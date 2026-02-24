@@ -152,7 +152,7 @@
 	background: radial-gradient(70% 60%, var(--blue) 0%, transparent 70%);
 	top: 10rem;
 	left: 50%;
-	opacity: 0.25;
+	opacity: 0.27;
 	filter: blur(50px);
 	width: 110rem;
 }

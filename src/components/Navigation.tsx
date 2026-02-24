@@ -64,6 +64,7 @@ export default function Navigation() {
 							Početna
 						</Link>
 					</li>
+
 					<li className='nav-item'>
 						<Link
 							href='#services'
@@ -74,18 +75,18 @@ export default function Navigation() {
 					</li>
 					<li className='nav-item'>
 						<Link
-							href='#about'
-							className={`nav-link ${activeSection === "about" ? "active" : ""}`}
-							onClick={() => scrollToSection("about")}>
-							O meni
-						</Link>
-					</li>
-					<li className='nav-item'>
-						<Link
 							href='#portfolio'
 							className={`nav-link ${activeSection === "portfolio" ? "active" : ""}`}
 							onClick={() => scrollToSection("portfolio")}>
 							Portfolio
+						</Link>
+					</li>
+					<li className='nav-item'>
+						<Link
+							href='#about'
+							className={`nav-link ${activeSection === "about" ? "active" : ""}`}
+							onClick={() => scrollToSection("about")}>
+							O meni
 						</Link>
 					</li>
 					<li className='nav-item'>
