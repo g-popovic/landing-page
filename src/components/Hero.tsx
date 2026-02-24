@@ -82,7 +82,6 @@ export default function Hero() {
 			star.style.top = y + "%";
 			star.style.animationDelay = Math.random() * animationDuration + "s";
 			star.style.animationDuration = `${animationDuration}s`;
-			star.style.opacity = (Math.random() * 0.6 + 0.3).toString();
 
 			heroStarsContainer.appendChild(star);
 		}

@@ -10,17 +10,22 @@ import ScriptSetup from "@/components/util/ScriptSetup";
 export default function Home() {
 	return (
 		<div className='page-container'>
-			<div className='gradient-1' />
-			<div className='gradient-2' />
-			<div className='gradient-3' />
-			<div className='bottom-gradient' />
-
 			<Navigation />
 			<Hero />
+
+			<div className='gradient-container'>
+				<div className='gradient-1' />
+				<div className='gradient-2' />
+				<div className='gradient-3' />
+				<div className='gradient-4' />
+				<div className='bottom-gradient' />
+			</div>
+
 			<Services />
 			<Portfolio />
 			<About />
 			<Contact />
+
 			<Footer />
 
 			<ScriptSetup />

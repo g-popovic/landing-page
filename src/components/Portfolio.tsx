@@ -58,8 +58,8 @@ export default function Portfolio() {
 	}
 
 	return (
-		<section id='portfolio' className='portfolio'>
-			<div className='container'>
+		<section id='portfolio' className='portfolio container'>
+			<div>
 				<div className='section-header animate-in'>
 					<h2>Naš rad</h2>
 					<p>Pogledajte neke od projekata koje smo realizovali</p>

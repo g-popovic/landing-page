@@ -1,9 +1,7 @@
 /* Contact Section */
 .contact {
-	padding: 20rem 0 0;
+	margin: 20rem auto 0;
 	text-align: center;
-	width: 100vw;
-	max-width: 100vw;
 
 	&::after {
 		content: "";
@@ -37,7 +35,6 @@
 
 .contact-list {
 	max-width: 60rem;
-	width: calc(100% - 3rem);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
