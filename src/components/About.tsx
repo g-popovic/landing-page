@@ -19,11 +19,11 @@ export default function About() {
 
 					<p>
 						Ja sam Đorđe Popović, softverski inženjer sa više od 5 godine iskustva u
-						profesionalnoj izradi web i mobilnih proizvoda. Pomažem malim biznisima i
-						preduzetnicima da dobiju kvalitetan, brz, i moderan sajt koji ostavlja
-						profesionalan utisak i podstiče pronalaženje novih klijenata. Pristup mi je
-						jednostavan: jasan dizajn, kvalitetna izrada i fokus na rezultate koji su
-						Vama važni.
+						profesionalnoj izradi web i mobilnih proizvoda, stečenog u svjetskim IT
+						firmama. Pomažem malim biznisima i preduzetnicima da dobiju kvalitetan, brz,
+						i moderan sajt koji ostavlja profesionalan utisak i podstiče pronalaženje
+						novih klijenata. Pristup mi je jednostavan: jasan dizajn, kvalitetna izrada
+						i fokus na rezultate koji su Vama važni.
 					</p>
 				</div>
 			</div>
