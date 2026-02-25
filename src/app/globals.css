@@ -96,7 +96,7 @@ h6 {
 
 .container,
 .gradient-container {
-	max-width: 1200px;
+	max-width: 1240px;
 	margin: 0 auto;
 	padding: 0 2rem;
 }
@@ -161,9 +161,9 @@ h2 {
 }
 
 .btn-primary {
-	background: var(--brand-main);
+	background: linear-gradient(135deg, #444fc6 0%, #3b82f6 100%);
 	color: white;
-	box-shadow: 0 8px 32px var(--brand-accent-30);
+	box-shadow: 0 4px 20px 0 rgba(68, 90, 198, 0.8);
 	border: none;
 }
 
@@ -177,6 +177,7 @@ h2 {
 	color: rgba(255, 255, 255, 0.9);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(10px);
+	/* box-shadow: 0 4px 12px 0 rgba(255, 255, 255, 0.1); */
 	-webkit-backdrop-filter: blur(10px);
 }
 

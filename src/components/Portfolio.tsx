@@ -26,7 +26,7 @@ const workExperience: ProjectItem[] = [
 		title: "Relive",
 		date: "2021 - 2026",
 		description:
-			"Relive je globalna platforma za praćenje aktivnosti poput trčanja, biciklizma i planinarenja, sa mobilnom aplikacijom i web iskustvom, koju koriste preko 20 miliona korisnika. Radio sam na ključnim dijelovima proizvoda koji utiču na svakodnevno iskustvo korisnika, uz redovne isporuke i mjerljivo smanjenje operativnih troškova za oko 3000 EUR mjesečno.",
+			"Relive je platforma, bazirana u Holandiji, koja omogućava praćenje aktivnosti poput trčanja, biciklizma i planinarenja, sa mobilnom i web aplikacijom. Koriste je preko 20 miliona korisnika širom sveta. Radio sam u multi-disciplinarnom timu na ključnim dijelovima proizvoda koji utiču na svakodnevno iskustvo korisnika. U toku svog radnog iskustva, smanjio sam troškove infrastrukture za oko 3000 EUR mjesečno, i značajno poboljšao rang na Google pretrazi kroz SEO optimizaciju.",
 		image: reliveImage,
 		link: "https://relive.com"
 	},
@@ -35,7 +35,7 @@ const workExperience: ProjectItem[] = [
 		title: "Camea",
 		date: "Jan - Jun 2021 ",
 		description:
-			"Camea je platforma koja modernizuje caregiving usluge i olakšava povezivanje korisnika sa pružaocima njege. Vodio sam razvoj glavnih funkcionalnosti kako bi proizvod brže došao do korisnika i imao stabilnu osnovu za rast.",
+			"Camea je platforma koja se fokusira na digitalizaciju pronalaženja osobe za pomoć po kući, bazirana u Njemačkoj. Bio sam odgovoran za razvoj glavnih funkcionalnosti sajta. Sopstvenom inicijativom uveo sam moderne tehnologije i prakse koje su značajno smanjile vreme razvoja i poboljšale kvalitet proizvoda, poput automatskog testiranja.",
 		image: cameaImage
 	},
 	{
@@ -43,7 +43,7 @@ const workExperience: ProjectItem[] = [
 		title: "Ether",
 		date: "Nov - Dec 2020",
 		description:
-			"Ether je location-based društvena aplikacija koja povezuje ljude kroz lokalni sadržaj i interakciju. Preuzeo sam razvoj ključnih dijelova platforme i pomogao timu da MVP bude spreman znatno prije plana, što je omogućilo ranije testiranje ideje na tržištu.",
+			"Ether je društvena aplikacija koja povezuje ljude na osnovu njihove lokacije i interesovanja. Kao jedini programer u timu, samostalno sam razvio sam čitavu back-end infrastrukturu i API za aplikaciju od nule u duplo kraćem roku od onog što je planirano. Rezultirajući sistem je bio stabilan, brz, i testiran sa preko 100,000 virtualnih korisnika.",
 		image: etherImage
 	}
 ];
@@ -54,7 +54,7 @@ const sideProjects: ProjectItem[] = [
 		title: "Cablo",
 		date: `2024 - ${currentYear}`,
 		description:
-			"Cablo je platforma za digitalizaciju licnog prevoza i taxi servisa u Crnoj Gori, nalik Uber-a. Dozvoljava korisnicima da zakažu vožnju putem aplikacije u bilo koje vrijeme širom teritorije Crne Gore. Zajedno sa dvoje programera, razvili smo čitav sistem (aplikaciju, sajt, i server) od nule.",
+			"Cablo je platforma za digitalizaciju licnog prevoza i taksi servisa u Crnoj Gori, nalik Uber-a. Dozvoljava korisnicima da zakažu vožnju putem aplikacije u bilo koje vrijeme širom teritorije Crne Gore, što rešava problem nedovoljne dostupnosti taksi servisa i tražnja posebnog broja taksija u svakom pojedinačnom gradu. Zajedno sa dvoje programera, razvili smo čitav sistem (aplikaciju, sajt, i server) od nule.",
 		image: cabloImage
 	},
 	{
@@ -86,14 +86,12 @@ export default function Portfolio() {
 				data-index={item.id}>
 				<div className='portfolio-item card'>
 					<div className='portfolio-content'>
-						<div>
-							<div className='portfolio-content-header'>
-								<h3>{item.title}</h3>
-								<p>{item.date}</p>
-							</div>
-
-							<p>{item.description}</p>
+						<div className='portfolio-content-header'>
+							<h3>{item.title}</h3>
+							<p>{item.date}</p>
 						</div>
+
+						<p className='portfolio-description'>{item.description}</p>
 
 						{item.link && (
 							<div className='portfolio-item-link'>

@@ -125,6 +125,9 @@
 .hero-buttons .btn {
 	opacity: 0;
 	animation: heroContentFadeIn 1.5s ease-in-out 1s forwards;
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+	/* width: 18rem; */
 }
 
 /* Word-by-word loading styles */

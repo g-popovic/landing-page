@@ -18,11 +18,12 @@ export default function About() {
 					<h2>Biografija</h2>
 
 					<p>
-						Ja sam Đorđe Popović, full-stack developer sa više od 5 godine iskustva u
-						izradi web i mobilnih proizvoda. Pomažem malim biznisima i preduzetnicima da
-						dobiju brz, moderan i jasan sajt koji ostavlja profesionalan utisak i
-						podstiče potencijalne klijente da se jave. Pristup mi je jednostavan: jasan
-						dizajn, kvalitetna izrada i fokus na rezultatima koji su važni za vaš posao.
+						Ja sam Đorđe Popović, softverski inženjer sa više od 5 godine iskustva u
+						profesionalnoj izradi web i mobilnih proizvoda. Pomažem malim biznisima i
+						preduzetnicima da dobiju kvalitetan, brz, i moderan sajt koji ostavlja
+						profesionalan utisak i podstiče pronalaženje novih klijenata. Pristup mi je
+						jednostavan: jasan dizajn, kvalitetna izrada i fokus na rezultate koji su
+						Vama važni.
 					</p>
 				</div>
 			</div>
