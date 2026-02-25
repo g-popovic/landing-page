@@ -117,7 +117,6 @@
 	animation: heroContentFadeIn 1.5s ease-in-out 1s forwards;
 	padding-left: 3.5rem;
 	padding-right: 3.5rem;
-	/* width: 18rem; */
 }
 
 /* Word-by-word loading styles */
@@ -125,11 +124,11 @@
 .hero-subtitle .word {
 	display: inline-block;
 	opacity: 0;
-	animation: wordFadeIn 1s ease-in-out forwards;
+	animation: wordFadeIn 0.7s ease-in-out forwards;
 }
 
 .hero-title .word {
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 }
 
 .hero-subtitle .word {
@@ -219,6 +218,13 @@
 		.btn {
 			width: 100%;
 		}
+	}
+
+	.hero-title .word {
+		animation-duration: 1s;
+	}
+	.hero-subtitle .word {
+		animation-duration: 0.5;
 	}
 }
 

@@ -81,7 +81,7 @@ export default function Hero() {
 					setupWordLoading(subtitleRef.current, subtitle);
 					setTimeout(() => {
 						wordByWordLoader(subtitleRef.current!, subtitle, 50);
-					}, 800);
+					}, 500);
 				}
 			}, 1500);
 		};

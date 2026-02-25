@@ -63,7 +63,7 @@ h6 {
 @keyframes wordFadeIn {
 	0% {
 		opacity: 0;
-		transform: translateY(70%);
+		transform: translateY(50%);
 		filter: blur(8px);
 	}
 	60% {
