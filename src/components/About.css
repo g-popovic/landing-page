@@ -41,7 +41,20 @@
 
 /* Mobile About */
 @media (max-width: 768px) {
+	.about {
+		padding-top: 6rem;
+	}
+
 	.about-content {
 		flex-direction: column;
+
+		h2 {
+			text-align: center;
+		}
+
+		p {
+			text-align: center;
+			padding: 0 1rem;
+		}
 	}
 }

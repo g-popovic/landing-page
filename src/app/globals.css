@@ -2,7 +2,10 @@
 
 html {
 	scroll-behavior: smooth;
-	scrollbar-color: red;
+
+	::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 :root {
@@ -35,9 +38,8 @@ body {
 	line-height: 1.6;
 	color: #ffffff;
 	background: #0a0a0a;
-	overflow: hidden;
+	overflow-x: hidden;
 	opacity: 1;
-	scrollbar-color: red;
 }
 
 p {
@@ -303,8 +305,10 @@ a {
 			var(--border-neutral) 100%
 		);
 	}
+}
 
-	&:hover {
+@media (min-width: 768px) {
+	.card:hover {
 		transform: scale(1.01);
 		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 
@@ -374,10 +378,10 @@ a {
 @media (max-width: 768px) {
 	.gradient-2,
 	.gradient-3 {
-		top: 33%;
+		top: 31%;
 		left: -5%;
 		width: 190%;
-		height: 240rem;
+		height: 260rem;
 		opacity: 0.25;
 	}
 

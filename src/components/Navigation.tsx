@@ -54,7 +54,7 @@ export default function Navigation() {
 		<nav className='nav'>
 			<div className='nav-container'>
 				<div className='nav-logo'>
-					<a onClick={() => scrollToSection("home")}>Quark Digital</a>
+					<a onClick={() => scrollToSection("home")}>Đorđe Popović</a>
 				</div>
 				<ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
 					<li className='nav-item'>
@@ -94,7 +94,7 @@ export default function Navigation() {
 						</a>
 					</li>
 				</ul>
-				<div className='nav-toggle' onClick={toggleMenu}>
+				<div className={`nav-toggle ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
 					<span className='bar'></span>
 					<span className='bar'></span>
 					<span className='bar'></span>

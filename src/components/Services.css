@@ -124,6 +124,10 @@
 }
 
 @media (max-width: 850px) {
+	.services {
+		padding-bottom: 2rem;
+	}
+
 	.service-timeline-item {
 		justify-content: center !important;
 

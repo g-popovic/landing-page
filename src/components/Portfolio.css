@@ -129,6 +129,7 @@
 @media (max-width: 768px) {
 	.portfolio-items {
 		grid-template-columns: 1fr;
+		margin-bottom: 8rem;
 	}
 
 	.portfolio-item {
