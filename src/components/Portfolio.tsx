@@ -36,7 +36,8 @@ const workExperience: ProjectItem[] = [
 		date: "Jan - Jun 2021 ",
 		description:
 			"Camea je platforma koja se fokusira na digitalizaciju pronalaženja osobe za pomoć po kući, bazirana u Njemačkoj. Bio sam odgovoran za razvoj glavnih funkcionalnosti sajta. Sopstvenom inicijativom uveo sam moderne tehnologije i prakse koje su značajno smanjile vreme razvoja i poboljšale kvalitet proizvoda, poput automatskog testiranja.",
-		image: cameaImage
+		image: cameaImage,
+		link: "https://www.linkedin.com/company/cameacare"
 	},
 	{
 		id: 3,
@@ -84,7 +85,7 @@ export default function Portfolio() {
 				className='animate-in'
 				key={item.id}
 				data-index={item.id}>
-				<div className='portfolio-item card'>
+				<div className='portfolio-item card highlighted-1'>
 					<div className='portfolio-content'>
 						<div className='portfolio-content-header'>
 							<h3>{item.title}</h3>

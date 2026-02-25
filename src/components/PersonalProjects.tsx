@@ -50,7 +50,10 @@ const learningProjects = [
 export default function PersonalProjects() {
 	function renderLearningProjectItem(item: (typeof learningProjects)[0]) {
 		return (
-			<div className='portfolio-learning-card card' key={item.id} data-index={item.id}>
+			<div
+				className='portfolio-learning-card card highlighted-2'
+				key={item.id}
+				data-index={item.id}>
 				<div className='portfolio-content'>
 					<div>
 						<div className='portfolio-content-header'>
