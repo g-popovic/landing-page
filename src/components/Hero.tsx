@@ -11,11 +11,12 @@ export default function Hero() {
 	const heroStarsRef = useRef<HTMLDivElement>(null);
 	const heroContainerRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
-	const subtitleRef = useRef<HTMLParagraphElement>(null);
+	const subtitle1Ref = useRef<HTMLParagraphElement>(null);
+	const subtitle2Ref = useRef<HTMLParagraphElement>(null);
 
 	const title = "Đorđe Popović";
-	const subtitle =
-		"Softverski Inženjer sa preko 5+ godina radnog iskustva. Specijalizovan u izradi modernih web sajtova i aplikacija.";
+	const subtitle1 = "Softverski Inženjer sa preko 5+ godina radnog iskustva.";
+	const subtitle2 = "Specijalizovan u izradi modernih web sajtova i aplikacija.";
 
 	useEffect(() => {
 		// Setup word-by-word loading
@@ -77,11 +78,18 @@ export default function Hero() {
 					wordByWordLoader(titleRef.current, title, 200);
 				}
 
-				if (subtitleRef.current) {
-					setupWordLoading(subtitleRef.current, subtitle);
+				if (subtitle1Ref.current) {
+					setupWordLoading(subtitle1Ref.current, subtitle1);
 					setTimeout(() => {
-						wordByWordLoader(subtitleRef.current!, subtitle, 50);
+						wordByWordLoader(subtitle1Ref.current!, subtitle1, 50);
 					}, 500);
+				}
+
+				if (subtitle2Ref.current) {
+					setupWordLoading(subtitle2Ref.current, subtitle2);
+					setTimeout(() => {
+						wordByWordLoader(subtitle2Ref.current!, subtitle2, 50);
+					}, 700);
 				}
 			}, 1500);
 		};
@@ -123,15 +131,15 @@ export default function Hero() {
 					<h1 className='hero-title' ref={titleRef}>
 						{title}
 					</h1>
-					<p className='hero-subtitle' ref={subtitleRef}>
-						{subtitle}
-					</p>
+					<div>
+						<p ref={subtitle1Ref} className='hero-subtitle'>
+							{subtitle1}
+						</p>
+						<p ref={subtitle2Ref} className='hero-subtitle hide-mobile'>
+							{subtitle2}
+						</p>
+					</div>
 					<div className='hero-buttons'>
-						<a
-							onClick={() => scrollToSection("services")}
-							className='btn btn-secondary hide-desktop'>
-							Istraži Dalje
-						</a>
 						<a
 							onClick={() => scrollToSection("contact")}
 							className='btn btn-primary hide-mobile'>
@@ -139,8 +147,8 @@ export default function Hero() {
 						</a>
 						<a
 							onClick={() => scrollToSection("services")}
-							className='btn btn-secondary hide-mobile'>
-							Usluge
+							className='btn btn-secondary'>
+							Saznaj Više
 						</a>
 					</div>
 				</div>

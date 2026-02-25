@@ -99,9 +99,8 @@
 .hero-subtitle {
 	font-size: 1.2rem;
 	color: rgba(255, 255, 255, 0.7);
-	margin-bottom: 3.5rem;
 	line-height: 1.6;
-	max-width: 600px;
+	width: 600px;
 	position: relative;
 }
 
@@ -110,13 +109,13 @@
 	justify-content: center;
 	gap: 1rem;
 	flex-wrap: wrap;
+	margin-top: 3.5rem;
 }
 
 .hero-buttons .btn {
 	opacity: 0;
 	animation: heroContentFadeIn 1.5s ease-in-out 1s forwards;
-	padding-left: 3.5rem;
-	padding-right: 3.5rem;
+	width: 11rem;
 }
 
 /* Word-by-word loading styles */
@@ -206,12 +205,13 @@
 	}
 
 	.hero-subtitle {
-		width: 280px;
-		margin: 0 auto 3.5rem;
-		text-align: justify;
+		width: 310px;
+		margin: 0 auto;
+		/* text-align: justify; */
 	}
 
 	.hero-buttons {
+		margin-top: 3rem;
 		flex-direction: column;
 		align-items: center;
 
