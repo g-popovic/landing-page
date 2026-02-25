@@ -63,7 +63,7 @@ const sideProjects: ProjectItem[] = [
 		title: "Montenegro Luxury Association",
 		date: "2022 - 2023",
 		description:
-			"Za Montenegro Luxury Association razvio sam digitalnu platformu koja bolje predstavlja premium turističku ponudu i olakšava online prisustvo organizacije. Projekat je postavljen od nule, od koncepta do ključnih funkcionalnosti, sa fokusom na stabilan rast.",
+			"Radio u timu na izradi digitalne platforme za Montenegro Luxury Association, organizacija koja promoviše luksuzni turizam u Crnoj Gori na globalnom tržištu kroz brojna partnerstva i projekte. Razvio sam ključne funkcionalnosti na web sajtu za bukiranje luksuznog smještaja i usluga u Crnoj Gori koristeći moderne tehnologije.",
 		image: mneLuxImage
 	},
 	{
@@ -71,7 +71,7 @@ const sideProjects: ProjectItem[] = [
 		title: "Bionize",
 		date: "Jun - Oct 2022",
 		description:
-			"Bionize je browser dodatak koji automatski prilagođava tekst na web stranicama kako bi sadržaj bio lakši i brži za čitanje. Proizvod je prešao 3000+ preuzimanja i pokazao koliko dobro osmišljen UX detalj može odmah povećati upotrebljivost.",
+			"Bionize je browser dodatak koji automatski prilagođava tekst na web stranicama kako bi sadržaj bio lakši i brži za čitanje. Proizvod je prešao 3000+ preuzimanja u roku od dvije nedelje i pokazao koliko dobro osmišljen UX detalj može odmah povećati upotrebljivost.",
 		image: bionizeImage
 	}
 ];
