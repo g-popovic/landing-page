@@ -18,6 +18,18 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+	let isSafari = false;
+	const userAgent = navigator.userAgent.toLowerCase();
+	if (userAgent.indexOf("safari") != -1) {
+		if (userAgent.indexOf("chrome") > -1) {
+			//browser is chrome
+		} else if (userAgent.indexOf("opera") > -1 || userAgent.indexOf("opr") > -1) {
+			//browser is opera
+		} else {
+			isSafari = true;
+		}
+	}
+
 	function renderContactItem(item: (typeof contactInfo)[0]) {
 		const splitDescription = item.description.split("\n");
 
@@ -49,7 +61,10 @@ export default function Contact() {
 							mogući način. Pošaljite mi poruku ili pozovite direktno.
 						</p>
 					</div>
-					<div className='contact-gradient-container animate-in'>
+					<div className='contact-gradient-container hide-desktop'>
+						<div className='cta-gradient' />
+					</div>
+					<div className='contact-gradient-container animate-in hide-mobile'>
 						<div className='cta-gradient' />
 					</div>
 					<div className='animate-in'>
@@ -57,7 +72,7 @@ export default function Contact() {
 							{contactInfo.map(renderContactItem)}
 						</div>
 
-						<div className='contact-cta-container '>
+						<div className={`contact-cta-container ${isSafari ? "no-gradient" : ""}`}>
 							<div className='contact-cta-background-gradient' />
 							<a className='btn contact-cta' href='tel:+38269397895'>
 								Kontaktiraj

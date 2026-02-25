@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import "./Hero.css";
 
 const HERO_RING_1_WIDTH = 500;
@@ -162,6 +161,17 @@ export default function Hero() {
 		initLoadingScreen();
 	}, []);
 
+	const scrollToSection = (sectionId: string) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			const offsetTop = element.offsetTop;
+			window.scrollTo({
+				top: offsetTop,
+				behavior: "smooth"
+			});
+		}
+	};
+
 	return (
 		<section id='home' className='hero'>
 			{/* Hero Stars Background */}
@@ -187,15 +197,21 @@ export default function Hero() {
 						{subtitle}
 					</p>
 					<div className='hero-buttons'>
-						<Link href='#services' className='btn btn-secondary hide-desktop'>
+						<a
+							onClick={() => scrollToSection("services")}
+							className='btn btn-secondary hide-desktop'>
 							Istraži Dalje
-						</Link>
-						<Link href='#contact' className='btn btn-primary hide-mobile'>
+						</a>
+						<a
+							onClick={() => scrollToSection("contact")}
+							className='btn btn-primary hide-mobile'>
 							Kontakt
-						</Link>
-						<Link href='#services' className='btn btn-secondary hide-mobile'>
+						</a>
+						<a
+							onClick={() => scrollToSection("services")}
+							className='btn btn-secondary hide-mobile'>
 							Usluge
-						</Link>
+						</a>
 					</div>
 				</div>
 			</div>
