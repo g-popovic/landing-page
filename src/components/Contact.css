@@ -1,6 +1,7 @@
 /* Contact Section */
 .contact {
-	margin: 20rem auto 0;
+	margin: 5rem auto 0;
+	padding-top: 15rem;
 	text-align: center;
 
 	&::after {

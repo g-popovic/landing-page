@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import "./Navigation.css";
 
 export default function Navigation() {
@@ -11,7 +10,7 @@ export default function Navigation() {
 	useEffect(() => {
 		const handleScroll = () => {
 			const sections = ["home", "services", "about", "portfolio", "contact"];
-			const scrollPosition = window.scrollY + window.innerHeight / 2;
+			const scrollPosition = window.scrollY + window.innerHeight / 4;
 
 			for (const section of sections) {
 				const element = document.getElementById(section);
@@ -42,7 +41,11 @@ export default function Navigation() {
 	const scrollToSection = (sectionId: string) => {
 		const element = document.getElementById(sectionId);
 		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
+			const offsetTop = element.offsetTop;
+			window.scrollTo({
+				top: offsetTop,
+				behavior: "smooth"
+			});
 		}
 		closeMenu();
 	};
@@ -51,51 +54,44 @@ export default function Navigation() {
 		<nav className='nav'>
 			<div className='nav-container'>
 				<div className='nav-logo'>
-					<Link href='#home' onClick={() => scrollToSection("home")}>
-						Quark Digital
-					</Link>
+					<a onClick={() => scrollToSection("home")}>Quark Digital</a>
 				</div>
 				<ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
 					<li className='nav-item'>
-						<Link
-							href='#home'
+						<a
 							className={`nav-link ${activeSection === "home" ? "active" : ""}`}
 							onClick={() => scrollToSection("home")}>
 							Početna
-						</Link>
+						</a>
 					</li>
 
 					<li className='nav-item'>
-						<Link
-							href='#services'
+						<a
 							className={`nav-link ${activeSection === "services" ? "active" : ""}`}
 							onClick={() => scrollToSection("services")}>
 							Usluge
-						</Link>
+						</a>
 					</li>
 					<li className='nav-item'>
-						<Link
-							href='#portfolio'
+						<a
 							className={`nav-link ${activeSection === "portfolio" ? "active" : ""}`}
 							onClick={() => scrollToSection("portfolio")}>
 							Portfolio
-						</Link>
+						</a>
 					</li>
 					<li className='nav-item'>
-						<Link
-							href='#about'
+						<a
 							className={`nav-link ${activeSection === "about" ? "active" : ""}`}
 							onClick={() => scrollToSection("about")}>
 							O meni
-						</Link>
+						</a>
 					</li>
 					<li className='nav-item'>
-						<Link
-							href='#contact'
+						<a
 							className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
 							onClick={() => scrollToSection("contact")}>
 							Kontakt
-						</Link>
+						</a>
 					</li>
 				</ul>
 				<div className='nav-toggle' onClick={toggleMenu}>

@@ -2,6 +2,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scrollbar-color: red;
 }
 
 :root {
@@ -34,8 +35,9 @@ body {
 	line-height: 1.6;
 	color: #ffffff;
 	background: #0a0a0a;
-	overflow-x: hidden;
+	overflow: hidden;
 	opacity: 1;
+	scrollbar-color: red;
 }
 
 p {
@@ -325,19 +327,6 @@ a {
 	filter: blur(0);
 }
 
-.bottom-gradient {
-	position: fixed;
-	bottom: -30%;
-	left: -40vw;
-	width: 100vw;
-	height: 50rem;
-	border-radius: 4px;
-	/* box-shadow: 0 0 100rem 40rem var(--brand-main); */
-	/* background: radial-gradient(100% 100%, var(--brand-main) 0%, transparent 50%); */
-	opacity: 0.15;
-	/* filter: blur(50px); */
-}
-
 .gradient-1,
 .gradient-2,
 .gradient-3,
@@ -370,6 +359,7 @@ a {
 .gradient-3 {
 	top: 50%;
 	left: 120%;
+	width: 150rem;
 }
 
 @keyframes gradient-breathe {
