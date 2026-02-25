@@ -61,12 +61,15 @@ export default function Contact() {
 							mogući način. Pošaljite mi poruku ili pozovite direktno.
 						</p>
 					</div>
+
+					{/* Mobile (iOS?) doesn't properly support animating the background in */}
 					<div className='contact-gradient-container hide-desktop'>
 						<div className='cta-gradient' />
 					</div>
 					<div className='contact-gradient-container animate-in hide-mobile'>
 						<div className='cta-gradient' />
 					</div>
+
 					<div className='animate-in'>
 						<div className='contact-list card highlighted '>
 							{contactInfo.map(renderContactItem)}
