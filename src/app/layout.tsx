@@ -5,10 +5,25 @@ import "./globals.css";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
+const title = "Đorđe Popović - Softverski Inženjer";
+const description =
+	"Softverski Inženjer / programer sa preko 5+ godina radnog iskustva. Specijalizovan u izradi modernih web sajtova i aplikacija.";
+
 export const metadata: Metadata = {
-	title: "Quark Digital - Web Development Agency Montenegro",
-	description:
-		"Profesionalna web development agencija iz Crne Gore. Specijalizovani za moderne web aplikacije, e-commerce i digitalna rešenja."
+	title,
+	description,
+	openGraph: {
+		images: "/preview.jpg",
+		type: "website",
+		siteName: title,
+		title,
+		description
+	},
+	twitter: {
+		title,
+		description,
+		images: "/preview.jpg"
+	}
 };
 
 export default function RootLayout({
