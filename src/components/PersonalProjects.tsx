@@ -51,7 +51,7 @@ export default function PersonalProjects() {
 	function renderLearningProjectItem(item: (typeof learningProjects)[0]) {
 		return (
 			<div
-				className='portfolio-learning-card card highlighted-2'
+				className='portfolio-learning-card card highlighted-3'
 				key={item.id}
 				data-index={item.id}>
 				<div className='portfolio-content'>

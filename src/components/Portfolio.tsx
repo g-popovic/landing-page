@@ -80,7 +80,8 @@ export default function Portfolio() {
 	function renderPortfolioItem(item: ProjectItem) {
 		return (
 			<a href={item.link} target='_blank' className='' key={item.id} data-index={item.id}>
-				<div className='portfolio-item card animate-in highlighted-1'>
+				<div
+					className={`portfolio-item card animate-in highlighted-${item.id < 4 ? "1" : "2"}`}>
 					<div className='portfolio-content'>
 						<div className='portfolio-content-header'>
 							<h3>{item.title}</h3>

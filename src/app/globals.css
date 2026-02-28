@@ -292,13 +292,21 @@ a {
 
 	&.highlighted-1::before {
 		background: radial-gradient(
-			30% 100% at -0% 20%,
+			30% 100% at 0% 20%,
 			var(--brand-main) 0%,
 			var(--border-neutral) 100%
 		);
 	}
 
 	&.highlighted-2::before {
+		background: radial-gradient(
+			30% 110% at 30% 50%,
+			var(--brand-main) 0%,
+			var(--border-neutral) 100%
+		);
+	}
+
+	&.highlighted-3::before {
 		background: radial-gradient(
 			30% 150% at 50% 0%,
 			var(--brand-main) 0%,
@@ -352,18 +360,18 @@ a {
 
 .gradient-2,
 .gradient-3 {
-	background: radial-gradient(100% 70%, var(--brand-main) 0%, transparent 70%);
+	background: radial-gradient(70% 70%, var(--brand-main) 0%, transparent 70%);
 	top: 31%;
-	left: -20%;
+	left: -18%;
 	opacity: 0.17;
-	width: 200rem;
+	width: 250rem;
 	height: 150rem;
 }
 
 .gradient-3 {
 	top: 50%;
 	left: 120%;
-	width: 150rem;
+	width: 200rem;
 }
 
 @keyframes gradient-breathe {
