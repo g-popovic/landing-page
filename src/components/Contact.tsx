@@ -36,19 +36,19 @@ export default function Contact() {
 		const splitDescription = item.description.split("\n");
 
 		return (
-			<a href={item.link} target='_blank' className='contact-item' key={item.title}>
+			<div className='contact-item' key={item.title}>
 				<div className='contact-item-header'>
 					<h3>{item.title}</h3>
 				</div>
-				<p>
+				<a href={item.link} target='_blank'>
 					{splitDescription.map((line, index) => (
 						<span key={index}>
 							{line}
 							{index < splitDescription.length - 1 && <br />}
 						</span>
 					))}
-				</p>
-			</a>
+				</a>
+			</div>
 		);
 	}
 
