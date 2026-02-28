@@ -79,13 +79,8 @@ const sideProjects: ProjectItem[] = [
 export default function Portfolio() {
 	function renderPortfolioItem(item: ProjectItem) {
 		return (
-			<a
-				href={item.link}
-				target='_blank'
-				className='animate-in'
-				key={item.id}
-				data-index={item.id}>
-				<div className='portfolio-item card highlighted-1'>
+			<a href={item.link} target='_blank' className='' key={item.id} data-index={item.id}>
+				<div className='portfolio-item card animate-in highlighted-1'>
 					<div className='portfolio-content'>
 						<div className='portfolio-content-header'>
 							<h3>{item.title}</h3>

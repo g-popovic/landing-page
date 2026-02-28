@@ -33,12 +33,13 @@
 
 .footer-section ul li {
 	margin-bottom: 0.5rem;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-section ul li a {
-	color: rgba(255, 255, 255, 0.7);
 	text-decoration: none;
 	transition: color 0.3s ease;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-section ul li a:hover {

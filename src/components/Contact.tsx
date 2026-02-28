@@ -5,11 +5,13 @@ import "./Contact.css";
 const contactInfo = [
 	{
 		title: "✉️ Email",
-		description: "georgepopovich14@\ngmail.com"
+		description: "georgepopovich14@\ngmail.com",
+		link: "mailto:georgepopovich14@gmail.com"
 	},
 	{
 		title: "📞 Telefon",
-		description: "+382 69 397 895\n(Viber / WhatsApp)"
+		description: "+382 69 397 895\n(Viber / WhatsApp)",
+		link: "tel:+38269397895"
 	},
 	{
 		title: "🌍 Lokacija",
@@ -34,7 +36,7 @@ export default function Contact() {
 		const splitDescription = item.description.split("\n");
 
 		return (
-			<div className='contact-item' key={item.title}>
+			<a href={item.link} target='_blank' className='contact-item' key={item.title}>
 				<div className='contact-item-header'>
 					<h3>{item.title}</h3>
 				</div>
@@ -46,7 +48,7 @@ export default function Contact() {
 						</span>
 					))}
 				</p>
-			</div>
+			</a>
 		);
 	}
 

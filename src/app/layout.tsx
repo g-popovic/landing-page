@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"
 
 const title = "Đorđe Popović - Softverski Inženjer";
 const description =
-	"Softverski Inženjer / programer sa preko 5+ godina radnog iskustva. Specijalizovan u izradi modernih web sajtova i aplikacija.";
+	"Programer sa preko 5+ godina radnog iskustva u izradi modernih web sajtova i aplikacija.";
 
 export const metadata: Metadata = {
 	title,

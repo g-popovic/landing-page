@@ -30,7 +30,7 @@ const services = [
 			"Podešavamo SEO i tehničke detalje kako bi vaš sajt imao bolje šanse da rangira visoko na Google pretrazi.",
 		features: [
 			"On-page SEO: naslovi, meta opisi i struktura",
-			"Tehnička optimizacija za bolji ranking",
+			"Tehnička optimizacija za bolji Google ranking",
 			"Poboljšanje brzine i korisničkog iskustva"
 		]
 	},
