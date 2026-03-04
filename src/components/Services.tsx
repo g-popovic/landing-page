@@ -54,7 +54,7 @@ export default function Services() {
 				<article className='card highlighted service-card'>
 					<div className='service-header'>
 						<h3 className='service-name'>{service.title}</h3>
-						<h3 className='service-number'>{service.id}</h3>
+						<h3 className='service-number'>{"0" + service.id}</h3>
 					</div>
 					<p className='service-description'>{service.description}</p>
 					<ul className='service-features'>
